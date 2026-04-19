@@ -159,7 +159,7 @@ KDC-
 הTGT שבו נעשה שימוש כדי לקבל כרטיס מהשרת TGS .
 פרטי ההתחברות של המשתמש נשמרים בtgt ומאפשרים לו לא לאמת את זהותו כל פעם שהוא רוצה להנפיק כרטיס tgs .
 לכל כרטיס tgs יש מגבלה של זמן אשר מוגדרת מראש שבה הוא קיים .
-כל הכרטיסים מאוחסנים באופן לוקאלית בראמ של מכונת המשתמש, לכן הם עשויים גם להימחק כאשר המחשב יאותחל או יכובה.
+כל הכרטיסים מאוחסנים באופן לוקאלית בראמ של מכונת המשתמש cneuo abert קרברוס טרי, לכן הם עשויים גם להימחק כאשר המחשב יאותחל או יכובה.
 
 
 
@@ -172,10 +172,11 @@ KDC-
    הקרבורס נחשב למאובטח בשל כמה סיבות.
    1- יש בו פיטר הדורש מכל לקוח לאמת את זהותו לשרת, והשרת צריך לאמת את זהותו ללקוח לפני שמתחילה להתרחש התקשורת ביניהם.
    2-כדי להבטיח שאין ישות לא רצויה שמאזינה להודעות העוברות בין תקשורת הלקוח והשרת יש בקרברוס רכיב הנקרא  Authenticator אשר מאמת את זהותו של הלקוח ואת עדכניות הבקשה שלו לגישה לשירות רשת מסוים.
+  3- כדי לשמור על תקשורת מאובטחת, לאחר פרק זמן מסוים הsession key נמחק ועל המשתמש לנסות להתחבר לשירות אליו הוא רוצה לגשת מחדש.
+   4-בקרברוס יש פיטר שמאפשר לקבוע את משך הזמן המקסימלי בשעות שבו יהיה אפשר לעשות שימוש בכרטיס הTGS.
    
-   3-
 5. **Administration & Tools:**  What are common Kerberos administration tasks?  Describe commands like `kadmin`, `kinit`, `klist`, `kdestroy`, and how to add principals or change passwords.
-6. **Integration & Troubleshooting:**  How do services (Hadoop, HTTP, SSH) integrate with Kerberos?  What are typical issues (clock skew, wrong realm, keytab problems) and how do you diagnose them?
+
 
 
 1. **Directory Structure:**  Explain how LDAP organizes information in a hierarchical tree (DN, RDN), common object classes, and attributes for users and services.
