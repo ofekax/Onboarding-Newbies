@@ -169,9 +169,10 @@ KDC-
 
 3. **Security Properties:**  Why is Kerberos considered secure?  Discuss mutual authentication, replay protection, time sensitivity, and the role of the ticket lifetime.
    הקרבורס נחשב למאובטח בשל כמה סיבות.
-   1- יש בו פיטר הדורש מכל לקוח לאמת את זהותו לשרת, והשרת צריך לאמת את זהותו ללקוח לפני שמתקיימץ
-4. **Administration & Tools:**  What are common Kerberos administration tasks?  Describe commands like `kadmin`, `kinit`, `klist`, `kdestroy`, and how to add principals or change passwords.
-5. **Integration & Troubleshooting:**  How do services (Hadoop, HTTP, SSH) integrate with Kerberos?  What are typical issues (clock skew, wrong realm, keytab problems) and how do you diagnose them?
+   1- יש בו פיטר הדורש מכל לקוח לאמת את זהותו לשרת, והשרת צריך לאמת את זהותו ללקוח לפני שמתחילה להתרחש התקשורת ביניהם.
+   2-
+5. **Administration & Tools:**  What are common Kerberos administration tasks?  Describe commands like `kadmin`, `kinit`, `klist`, `kdestroy`, and how to add principals or change passwords.
+6. **Integration & Troubleshooting:**  How do services (Hadoop, HTTP, SSH) integrate with Kerberos?  What are typical issues (clock skew, wrong realm, keytab problems) and how do you diagnose them?
 
 
 1. **Directory Structure:**  Explain how LDAP organizes information in a hierarchical tree (DN, RDN), common object classes, and attributes for users and services.
