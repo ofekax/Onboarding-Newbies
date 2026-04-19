@@ -158,7 +158,8 @@ KDC-
 שרת  הAS אחראי לבצע את האימות הראשוני של זהות המשתמש ולהנפיק עבורו כרטיס TGT כאשר האימות הוצלח.
 הTGT שבו נעשה שימוש כדי לקבל כרטיס מהשרת TGS .
 פרטי ההתחברות של המשתמש נשמרים בtgt ומאפשרים לו לא לאמת את זהותו כל פעם שהוא רוצה להנפיק כרטיס tgs .
-לכל כרטיס tgs יש מגבלה של זמן אשר מוגדרת מראש שבה הוא קיים.
+לכל כרטיס tgs יש מגבלה של זמן אשר מוגדרת מראש שבה הוא קיים .
+כל הכרטיסים מאוחסנים באופן לוקאלית בראמ של מכונת המשתמש, לכן הם עשויים גם להימחק כאשר המחשב יאותחל או יכובה.
 
 
 
@@ -170,7 +171,9 @@ KDC-
 3. **Security Properties:**  Why is Kerberos considered secure?  Discuss mutual authentication, replay protection, time sensitivity, and the role of the ticket lifetime.
    הקרבורס נחשב למאובטח בשל כמה סיבות.
    1- יש בו פיטר הדורש מכל לקוח לאמת את זהותו לשרת, והשרת צריך לאמת את זהותו ללקוח לפני שמתחילה להתרחש התקשורת ביניהם.
-   2-
+   2-כדי להבטיח שאין ישות לא רצויה שמאזינה להודעות העוברות בין תקשורת הלקוח והשרת יש בקרברוס רכיב הנקרא  Authenticator אשר מאמת את זהותו של הלקוח ואת עדכניות הבקשה שלו לגישה לשירות רשת מסוים.
+   
+   3-
 5. **Administration & Tools:**  What are common Kerberos administration tasks?  Describe commands like `kadmin`, `kinit`, `klist`, `kdestroy`, and how to add principals or change passwords.
 6. **Integration & Troubleshooting:**  How do services (Hadoop, HTTP, SSH) integrate with Kerberos?  What are typical issues (clock skew, wrong realm, keytab problems) and how do you diagnose them?
 
