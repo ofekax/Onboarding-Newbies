@@ -176,6 +176,7 @@ KDC-
    4-בקרברוס יש פיטר שמאפשר לקבוע את משך הזמן המקסימלי בשעות שבו יהיה אפשר לעשות שימוש בכרטיס הTGS.
    
 5. **Administration & Tools:**  What are common Kerberos administration tasks?  Describe commands like `kadmin`, `kinit`, `klist`, `kdestroy`, and how to add principals or change passwords.
+   kadmin- פקודה המספקת תחזוקה 
 
 
 
