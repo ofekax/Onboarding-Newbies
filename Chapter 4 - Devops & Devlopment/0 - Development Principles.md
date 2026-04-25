@@ -45,7 +45,7 @@ Use the resources below and practice researching additional information online.
    Explain ideas such as readability, maintainability, and the principle of  
    **“Leave the codebase cleaner than you found it.”**
    חשוב לכתוב קיום קוד נקי על מנת שהקוד יהיה מובן וקריא, יהיה פשוט לתחזק אותו וכדי שהוא יהיה פתוח להרחבות ושינויים.
-3. What are the **SOLID principles**?  
+2. What are the **SOLID principles**?  
    Describe each principle and explain how they help create maintainable
    object-oriented systems.
 עקרונות סוליד הינם 5 עקורנות בסיסים המנחים עבור קיום קוד נקי.
@@ -67,13 +67,22 @@ Interface Segregation Principle (ISP)-
 Dependency Inverted Principle (DIP)-
 עקרון זה אומר שיש לעשות שימוש בממשקים ובמחלקות אבסטרקטיות על מנת שהקוד יהיה יותר מופשט,גמיש וקל לתחזוקה.
 
-5. Explain the **KISS principle** and its importance in software design.
+3. Explain the **KISS principle** and its importance in software design.
 Why does simple and intuitive software scale well?  
    Why do overly complex systems tend to fail over time?
+עיקרון הקיס אומר שיש לעשות שימוש בדרך פשוטה ככל שאפשר במהלך ביצוע הפיתוח בשביל להשיג את הפונקציונליות או התוצאות הרצויות.
+עקרון זה חשוב מכיוון שהוא תומך בכתיבת קוד מופשט וזה בין היתר גם מקל על הקריאות, הישום, התחזוקה, והמימוש של הקוד.
+מערכות מורכבות נוטות יותר להיכשל מכיוון שהמורכבות שלהם יוצרת לעיתים יותר קרובות בלבול ושגיאות במהלך תהליך הפיתוח.
+עקרון זה תומך בהתרחבויות מכיוון שהוא מעודד מפתחים להימנע ממורכבויות לא הכרחיות בקוד על מנת שהקוד יהיה כמה שיותר נקי.
+הכללים המנחים למימוש העיקרון הם:
+1-על כל רכיב בקוד לפתור בעיה אחת בכל פעם, יש לפשט את הקוד ככל שניתן וכתוב תוכניות קטנות.
+2-יש למחוק קוד שאין בו שימוש
+3-יש לייחס חשיבות לקריאות הקוד
+4-יש להימנע מביצוע כפילויות קוד
+5-יש לחלק את המערכת למודולים כאשר כל אחד מהם יוכל לתפקד באופן עצמאי.
+5. What are the most common **paradigms / programming** (ex. Object Orianted) styles, what are the differences and when should each be used
 
-6. What are the most common **paradigms / programming** (ex. Object Orianted) styles, what are the differences and when should each be used
-
-7. What is **Test Driven Development (TDD)**?  
+6. What is **Test Driven Development (TDD)**?  
    Explain the development cycle and how it improves code reliability.
 
 ---
