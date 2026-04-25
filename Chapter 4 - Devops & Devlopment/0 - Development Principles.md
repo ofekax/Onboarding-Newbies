@@ -48,14 +48,32 @@ Use the resources below and practice researching additional information online.
 3. What are the **SOLID principles**?  
    Describe each principle and explain how they help create maintainable
    object-oriented systems.
+עקרונות סוליד הינם 5 עקורנות בסיסים המנחים עבור קיום קוד נקי.
+ מטרתם הינה לשפר את איכות הקוד ותחזוקתו עבור המפתחים.
+העקרונות הם:
+Single Responsibility Principle (SRP)-
+עקרון זה מדבר על כך שלכל רכיב בקוד (מחלקה, פונקציה וכו) צריך להיות בעל אחריות אחת.
+כאשר זה מתקיים הקוד הופך למופשט וברור יותר להבנה.
+מורכבות הקוד נפחתת וזה מקל על התחזוקה שלו.
+Open/Closed Principle (OCP)-
+העקרון אומר שעל הקוד להיות פתוח להרחבות אך סגור לשינויים, כלומר על הקוד הקיים יש לאפשר הרחבות אך ללא ביצוע שינויים בו.
+עקרון זה מאפשר להרחיב את פונקציונליות הקוד מבלי להפריע לאופן התפקוד של הקוד שכבר קיים ולפגוע ביציבות המערכת.
+Liskov Substitution Principle (LSP)-
+עקרון זה אומר זתתי מחלקות צריכות להיות תואמות וקשורות למחלקות האב שלהן.
+כלומר, על תתי המחלקות לתמוך בכלל הפונקציונליות והתכונות של מחלקות האב שלהן.
+Interface Segregation Principle (ISP)-
+עקרון זה אומר שמחלקות לא צריכות להיות תלויות בממשקים שהן לא עושות בהם שימוש.
+לפי עקרון זה כל מחלקה צריכה ליישם  רק את הממשקים שהינם הכרחיים עבורה על שהתלות והמורכסות בקוד תופחת.
+Dependency Inverted Principle (DIP)-
+עקרון זה אומר שיש לעשות שימוש בממשקים ובמחלקות אבסטרקטיות על מנת שהקוד יהיה יותר מופשט,גמיש וקל לתחזוקה.
 
-4. Explain the **KISS principle** and its importance in software design.
+5. Explain the **KISS principle** and its importance in software design.
 Why does simple and intuitive software scale well?  
    Why do overly complex systems tend to fail over time?
 
-5. What are the most common **paradigms / programming** (ex. Object Orianted) styles, what are the differences and when should each be used
+6. What are the most common **paradigms / programming** (ex. Object Orianted) styles, what are the differences and when should each be used
 
-6. What is **Test Driven Development (TDD)**?  
+7. What is **Test Driven Development (TDD)**?  
    Explain the development cycle and how it improves code reliability.
 
 ---
