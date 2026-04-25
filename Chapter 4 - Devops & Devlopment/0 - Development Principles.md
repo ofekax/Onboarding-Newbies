@@ -44,18 +44,18 @@ Use the resources below and practice researching additional information online.
 1. What are **Clean Code principles**, and why are they important in software development?  
    Explain ideas such as readability, maintainability, and the principle of  
    **“Leave the codebase cleaner than you found it.”**
-
-2. What are the **SOLID principles**?  
+   חשוב לכתוב קיום קוד נקי על מנת שהקוד יהיה מובן וקריא, יהיה פשוט לתחזק אותו וכדי שהוא יהיה פתוח להרחבות ושינויים.
+3. What are the **SOLID principles**?  
    Describe each principle and explain how they help create maintainable
    object-oriented systems.
 
-3. Explain the **KISS principle** and its importance in software design.
+4. Explain the **KISS principle** and its importance in software design.
 Why does simple and intuitive software scale well?  
    Why do overly complex systems tend to fail over time?
 
-4. What are the most common **paradigms / programming** (ex. Object Orianted) styles, what are the differences and when should each be used
+5. What are the most common **paradigms / programming** (ex. Object Orianted) styles, what are the differences and when should each be used
 
-5. What is **Test Driven Development (TDD)**?  
+6. What is **Test Driven Development (TDD)**?  
    Explain the development cycle and how it improves code reliability.
 
 ---
