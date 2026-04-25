@@ -80,9 +80,16 @@ Why does simple and intuitive software scale well?
 3-יש לייחס חשיבות לקריאות הקוד
 4-יש להימנע מביצוע כפילויות קוד
 5-יש לחלק את המערכת למודולים כאשר כל אחד מהם יוכל לתפקד באופן עצמאי.
-5. What are the most common **paradigms / programming** (ex. Object Orianted) styles, what are the differences and when should each be used
+4. What are the most common **paradigms / programming** (ex. Object Orianted) styles, what are the differences and when should each be used
+Event-Driven- גישה שלפיה התקשורת בין רכיבי המערכת מתבצעת על בסיס אירועים שמתרחשים
+ Object oriented programming- גישה שלפיה המפתח עושה שימוש במחלקות ובאובייקטיםעב
+עבור על אובייקט בגישה זו יש להגדיר את תכונותיו ואת הפונקציונליות שלו.
+לOOP יש 3 עקרונות מנחים והם כימוס (היכולת לכמס את המשתנים והפעולות תחת מחלקה אחת), הורשה (היכולת של המחלקות לרשת תכונות ופעולות ממחלקת האב) ופולימורפיזם (היכולת של אובייקטים מסוגים שונים לבצע את אותה הפעולה מ"משקפיים" אחרות) .
+Test Driven-
+גישה שלפיה על המפתח לכתוב קודם טסטים לקוד לפני שהוא נכתב.
+תכנות פונקציונלי- זוהי גישה שלפיה יש לעשות שימוש בפונקציות מטמטיות.
 
-6. What is **Test Driven Development (TDD)**?  
+5. What is **Test Driven Development (TDD)**?  
    Explain the development cycle and how it improves code reliability.
 
 ---
