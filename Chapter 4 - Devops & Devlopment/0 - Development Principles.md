@@ -44,7 +44,7 @@ Use the resources below and practice researching additional information online.
 1. What are **Clean Code principles**, and why are they important in software development?  
    Explain ideas such as readability, maintainability, and the principle of  
    **“Leave the codebase cleaner than you found it.”**
-   חשוב לכתוב קיום קוד נקי על מנת שהקוד יהיה מובן וקריא, יהיה פשוט לתחזק אותו וכדי שהוא יהיה פתוח להרחבות ושינויים.
+   חשוב לכתוב קיום קוד נקי על מנת שהקוד יהיה מובן וקריא, וכדי שיהיה פשוט יותר לתחזק אותו.
 2. What are the **SOLID principles**?  
    Describe each principle and explain how they help create maintainable
    object-oriented systems.
