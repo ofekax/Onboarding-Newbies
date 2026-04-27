@@ -111,20 +111,27 @@ Test Driven-
 1. Explain the difference between a **Pull Request (PR)**, **Code Review (CR)**,
    and **Design Review (DR)**.  
    Why are these processes important in team development?
+   הPR זוהי פונקציונליות מסוימת בגיט אשר מאפשר למפתח להעתיק את הקוד שנכתב בברנץ מסוים לבראנץ אחר.
+   זה חשוב בפיתוח קבוצתי בגלל שזה מאפשר למפתחים לשתף את הקוד שהם כותבים זה עם זה.
+   הCR זה הביקורת שהמפתחים מביאים זה לזה על הקוד שהם כתבו.
+   זה חשוב בפיתוח קבוצתי בגלל שזה מאפשר  להם לשתף דעות אחד של השני לגבי הקוד וזה מסייע להם לקבל החלטות שקולות ומחושבות יותר במהלך הפיתוח.
+   הDR זה שמפתח בונה עיצוב לאופן מימוש הקוד שאותו עליו לפתח, ועל העיצוב שהוא בנה מפתח אחר מעביר ביקורת.
+   זה חשוב בפיתוח קבוצתי בגלל שזה מאפשר להם לשתף את דעותיהם לגבי העיצוב, מה שמסייע להם לקבל החלטות שקולות יותר במהלך בניית העיצוב.
+ ו 
 
-2. Define the role of a **Pull Request (PR) / Merge Request**.
+3. Define the role of a **Pull Request (PR) / Merge Request**.
 What is **squshing**? Why is it common practice to squash commits before the final merge?
 Find how can you **apply specific fixes** from one branch to another without merging the entire history?
 What is the process for **safely undoing** a merged PR using git revert?
 
-3. Explain the difference between **CLI (Command Line Interface)** and
+4. Explain the difference between **CLI (Command Line Interface)** and
    **UI (User Interface)** applications.  
    What are the benefits of each?
 
-4. What is the difference between a **compiler** and an **interpreter**?  
+5. What is the difference between a **compiler** and an **interpreter**?  
    Provide examples of languages that use each approach.
 
-5. What is **event-driven programming**?  
+6. What is **event-driven programming**?  
    Explain how it differs from procedural execution and where it is commonly used.
 
 ---
