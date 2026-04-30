@@ -119,7 +119,7 @@ Test Driven-
    זה חשוב בפיתוח קבוצתי בגלל שזה מאפשר להם לשתף את דעותיהם לגבי העיצוב, מה שמסייע להם לקבל החלטות שקולות יותר במהלך בניית העיצוב.
  ו 
 
-3. Define the role of a **Pull Request (PR) / Merge Request**.
+2. Define the role of a **Pull Request (PR) / Merge Request**.
 What is **squshing**? Why is it common practice to squash commits before the final merge?
 Find how can you **apply specific fixes** from one branch to another without merging the entire history?
 What is the process for **safely undoing** a merged PR using git revert?
@@ -129,6 +129,12 @@ What is the process for **safely undoing** a merged PR using git revert?
 באמצעות השימוש בפקודת cherry-pick אפשר לקחת שינויים שהתבצעו בקומיט ספציפי בענף ולהעתיק אותם לענף אחר.
 בשביל לבטל שינויים שהתבצעו באופן בטוח באמצעות השימוש בפקודת  git revert יש לבצע את הדברים הבאים:
 1-יש לבדוק את הענף שבו  התבצע הבראנץ השגוי.
+   ניתן לגשת לענף באמצעות השימוש בפקודה: git checkout.
+2- מוודאים שיש את הקוד הכי מעודכן באותו הבראנץ בריפוסיטורי המרוחק גם בריפוסיטורי הלוקאלי באמצעות השימוש בפקודה:git pull.
+    3- מסתכלים בהיסטוריית הקומיטים הממזוגים של הבראנץ ומחפשים את הקומיט שאותו רוצים לבטל. (הקומיטים הממוזגים דומים לקומיטים הרגילים, ההבדל היחיד הוא שלקומיט ממוזג יש לפחות 2 קומיטים בהתבצעו לפניו)
+   רואים את הסיטוריית הקומיטים הממזוגים שבבראנץ באמצעות הרצת הפקודה git log.
+   4-לאחר מכן מבטלים את השינויים שהתבצעו בקומיט הממוזג הרצוי באמצעות השימוש בפקודה: git revert.
+   
 
 
 5. Explain the difference between **CLI (Command Line Interface)** and
