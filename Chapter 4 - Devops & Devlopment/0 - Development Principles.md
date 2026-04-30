@@ -137,14 +137,17 @@ What is the process for **safely undoing** a merged PR using git revert?
    
 
 
-5. Explain the difference between **CLI (Command Line Interface)** and
+3. Explain the difference between **CLI (Command Line Interface)** and
    **UI (User Interface)** applications.  
    What are the benefits of each?
+עם UI המשתמש מתממשק בצורה ויזואלית ואילו עם CLI המשתמש מתממשק באופן טקסטואלי באמצעות הרצת פקודות.
+היתרון של הUI הוא שלמשתמש יותר נוח ופשוט להתממשק איתו (מכיוון שבו לא נדרש מהמשתמש לדעת פקודות וחוקי תחביר ספציפיים בשונה מCLI).
+הCLI מציע למשתמש פונקציונליות גדולה יותר שבה הוא יכול לעשות שימוש וגם הוא מאפשר לו לבצע פעולות באופן יעיל יותר.
 
-6. What is the difference between a **compiler** and an **interpreter**?  
+7. What is the difference between a **compiler** and an **interpreter**?  
    Provide examples of languages that use each approach.
 
-7. What is **event-driven programming**?  
+8. What is **event-driven programming**?  
    Explain how it differs from procedural execution and where it is commonly used.
 
 ---
