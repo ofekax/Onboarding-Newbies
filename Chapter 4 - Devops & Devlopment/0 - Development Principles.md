@@ -123,15 +123,16 @@ Test Driven-
 What is **squshing**? Why is it common practice to squash commits before the final merge?
 Find how can you **apply specific fixes** from one branch to another without merging the entire history?
 What is the process for **safely undoing** a merged PR using git revert?
-
-4. Explain the difference between **CLI (Command Line Interface)** and
+תפקיד הפול רקווסט הוא לאפשר למפתחים למזג לשתף את השינויים המתבצעים בבראנצים השונים בריפוסיטורי אחד עם השני.
+מעיכה בגיט זה אומר לקבץ את כל הקומיטים שהתבצעו בענף לקומיט יחיד.
+5. Explain the difference between **CLI (Command Line Interface)** and
    **UI (User Interface)** applications.  
    What are the benefits of each?
 
-5. What is the difference between a **compiler** and an **interpreter**?  
+6. What is the difference between a **compiler** and an **interpreter**?  
    Provide examples of languages that use each approach.
 
-6. What is **event-driven programming**?  
+7. What is **event-driven programming**?  
    Explain how it differs from procedural execution and where it is commonly used.
 
 ---
