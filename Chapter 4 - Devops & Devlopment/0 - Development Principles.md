@@ -124,7 +124,8 @@ What is **squshing**? Why is it common practice to squash commits before the fin
 Find how can you **apply specific fixes** from one branch to another without merging the entire history?
 What is the process for **safely undoing** a merged PR using git revert?
 תפקיד הפול רקווסט הוא לאפשר למפתחים למזג לשתף את השינויים המתבצעים בבראנצים השונים בריפוסיטורי אחד עם השני.
-מעיכה בגיט זה אומר לקבץ את כל הקומיטים שהתבצעו בענף לקומיט יחיד.
+מעיכה בגיט זה אומר לקבץ קומיטים שהתבצעו בענף מסוים לקומיט יחיד.
+נפוץ לקבץ את כל הקומיטים בבראנץ מסוים לקומיט אחד ואז לעשות אליו מרג מכיוון שזה גורם להיסטוריית הקומיטים בריפוסיטורי להיות יותר מסודרת ומובנת.
 5. Explain the difference between **CLI (Command Line Interface)** and
    **UI (User Interface)** applications.  
    What are the benefits of each?
