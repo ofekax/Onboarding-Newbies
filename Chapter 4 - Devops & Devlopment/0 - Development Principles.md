@@ -144,9 +144,12 @@ What is the process for **safely undoing** a merged PR using git revert?
 היתרון של הUI הוא שלמשתמש יותר נוח ופשוט להתממשק איתו (מכיוון שבו לא נדרש מהמשתמש לדעת פקודות וחוקי תחביר ספציפיים בשונה מCLI).
 הCLI מציע למשתמש פונקציונליות גדולה יותר שבה הוא יכול לעשות שימוש וגם הוא מאפשר לו לבצע פעולות באופן יעיל יותר.
 
-7. What is the difference between a **compiler** and an **interpreter**?  
+4. What is the difference between a **compiler** and an **interpreter**?  
    Provide examples of languages that use each approach.
-
+בגישת הinterpreter האינטרפרטר מקמפל ומריץ את קוד הרמה הגבוהה של המערכת שורה אחר שורה (כל שורה בקוד מומרת לשפת מכונה ואז לאחר מכן מורצת).
+בגישת ה-compiler הקומפילר מקמפל (כלומר ממיר אותו לקוד שיהיה קריא עבור המכונה) את כל קוד הרמה הגבוהה של המערכת ורק לאחר מכן מאפשר את הרצתו.
+שפות בהם יש שימוש ב-interpreter: פייתון, גאבה סקריפט,  באש, ועוד...
+שפות בהם יש שימוש בקומפילר: גאבה, סי  שארפ ועוד..
 8. What is **event-driven programming**?  
    Explain how it differs from procedural execution and where it is commonly used.
 
