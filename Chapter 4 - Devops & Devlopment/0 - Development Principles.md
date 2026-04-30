@@ -146,7 +146,7 @@ What is the process for **safely undoing** a merged PR using git revert?
 
 4. What is the difference between a **compiler** and an **interpreter**?  
    Provide examples of languages that use each approach.
-בגישת הinterpreter האינטרפרטר מקמפל ומריץ את קוד הרמה הגבוהה של המערכת שורה אחר שורה (כל שורה בקוד מומרת לשפת מכונה ואז לאחר מכן מורצת).
+בגישת הinterpreter האינטרפרטר ממיר ומריץ את קוד הרמה הגבוהה של המערכת שורה אחר שורה (כל שורה בקוד מומרת לשפת מכונה ואז לאחר מכן מורצת).
 בגישת ה-compiler הקומפילר מקמפל (כלומר ממיר אותו לקוד שיהיה קריא עבור המכונה) את כל קוד הרמה הגבוהה של המערכת ורק לאחר מכן מאפשר את הרצתו.
 שפות בהם יש שימוש ב-interpreter: פייתון, גאבה סקריפט,  באש, ועוד...
 שפות בהם יש שימוש בקומפילר: גאבה, סי  שארפ ועוד..
@@ -168,11 +168,16 @@ What is the process for **safely undoing** a merged PR using git revert?
 1. What is **Python**, and what are its main characteristics compared to other
    programming languages (for example c#)?  
    Discuss readability, ecosystem, and runtime behavior.
+   פייתון זו שפת תכנות מונחת עצמים ברמה גבוהה אשר בה התחביר יחסית פשוט וקל לקריאה ומזכיר את שפת האנוש.
+   פייתון מבוססת על קוד פתוח וזה מאפשר למפתחים לשתף פעולה זה עם זה במהלך תהליך הפיתוח ולהנגיש את קוד המקור.
+   פייתון עושה שימוש באינטרפרטר עבור המרת הקוד לשפת מכונה ועבור הרצתו, כאשר מריצים את התוכנית הפייתון האינטרפרטר ממיר את קוד המשתמש לקוד המכונה שורה אחר שורה ולאחר מכן שורת הקוד מורצת פקודה אחר פקודה.
+   
+   
 
-2. What is a **REST API**?  
+3. What is a **REST API**?  
    Explain the core concepts such as resources, HTTP methods, and stateless communication.
 
-3. **What is the Global Interpreter Lock (GIL) in Python?**  
+4. **What is the Global Interpreter Lock (GIL) in Python?**  
    Explain:
    - What the GIL is and why it exists  
    - How it affects multi-threading and CPU-bound vs I/O-bound tasks  
@@ -183,10 +188,10 @@ What is the process for **safely undoing** a merged PR using git revert?
    **Bonus:** Compare **FastAPI** and **Flask**.
    What are the architectural differences and when would you use each framework?
 
-4. What are e2e testings? What are **tests** in software development, and why are they important?  
+5. What are e2e testings? What are **tests** in software development, and why are they important?  
    Explain unit tests, integration tests, and the role of automated testing.
 
-5. What are **mocks**, and why are they used in testing?  
+6. What are **mocks**, and why are they used in testing?  
    Compare **pytest** with other Python testing frameworks and explain its advantages.
 
 ---
