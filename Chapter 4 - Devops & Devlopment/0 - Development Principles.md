@@ -177,6 +177,7 @@ What is the process for **safely undoing** a merged PR using git revert?
 2. What is a **REST API**?  
    Explain the core concepts such as resources, HTTP methods, and stateless communication.
 רסט איפיאי הוא סוג של ממשק אי פי אי שבו מוגדרות אוסף של מתודות אשר בהם המפתחים יכולים לעשות שימוש כדי לשלוח בקשות ולקבל תגובות לישויות שונות ברשת על ידי השימוש במתודות הפרוטוקל HTTP.
+הראסט אי פי אי מאפשר למפתחים לחשוף למפתחים האחרים את הממשקים שהם כותבים.
 בארכיטקטורת רסט אי פי אי יש הפרדה בין הלקוח לשרת, הלקוח שולח בקשת HTTP לשרת והשרת מחזיר ללקוח תשובה בהתאם.
 ארבעת סוגי הבקשות HTTP הן: GET - בקשת מידע מהשרת
 , (שליחת מידע לשרת) POST
