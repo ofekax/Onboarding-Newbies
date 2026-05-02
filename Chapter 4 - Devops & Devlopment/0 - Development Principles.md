@@ -197,8 +197,12 @@ DELETE - בקשה למחיקת המידע בשרת.
 
    **Bonus:** Compare **FastAPI** and **Flask**.
    What are the architectural differences and when would you use each framework?
+   פאסט אי פי אי יותר יכול להתמודד עם עומסי עבודה, הוא יכול לטפל בטווח של 15,000-20,000 בקשות לשנייה לאומת פלאסק, שהוא יכול לטפל רק ב2,000-3,000.
+   פלאסק קיים הרבה יותר זמן מאשר פאסט אי פי אי, ולכן יש יותר ניסיון פיתוחי איתו ויותר קל ללמוד אותו מאשר פאסט אי פי אי, ניתן למצוא ברשת יותר מידע מפורט ומעמיק עליו.
+  בשונה מפלאסק, פאסט איפיאי מציע תמיכה מובנת באימות נתונים על ידי השימוש בספריית pydentic ובביצוע משימות באופן א- סינכורני (כלומר המשימות יכולות להתבצע באופן מקבילי ומונעות עיכוב בריצת המערכת בכך שאין צורך לחכות שמשימה תסתיים על מנת שהמשימה הבאה תרוץ).
+   
 
-4. What are e2e testings? What are **tests** in software development, and why are they important?  
+5. What are e2e testings? What are **tests** in software development, and why are they important?  
    Explain unit tests, integration tests, and the role of automated testing.
  טסטים בפיתוח תוכנה בודיקים ומאמתים שהמערכת מתפקדת בצורה תקינה ומאובטחת בהתאם לדרישותיה.
  ה-e2e  זוהי בדיקה שמטרתה לבדוק ולאמת את כל מהלך העבודה של המערכת מתחילתה ועד סופה, בדיקות אלו למעשה מוודאות שכל רכיבי המערכת (הדאטה באיסים, הסרוויסים וכו) עובדים ביחד באופן תקין.
@@ -210,7 +214,7 @@ DELETE - בקשה למחיקת המידע בשרת.
 אם במהלך הבדיקה התגלתה תקלה במערכת או שתשובת הבדיקה הייתה שונה מהצפוי המערכת תתריע על כך.
 
    
-5. What are **mocks**, and why are they used in testing?
+6. What are **mocks**, and why are they used in testing?
    מוק זה אובייקט שנוצר במטרה לחקות את התנהוגותו של אובייקט או רכיב מסוים במערכת.
    עושים שימוש באובייקט המוק  כאשר מתבצעת בדיקת מוק, בשביל לבודד ולאמת פונקציונליות מסוימת של רכיב במערכת ללא תלות בשאר הרכיבים שלה.
    Compare **pytest** with other Python testing frameworks and explain its advantages.
