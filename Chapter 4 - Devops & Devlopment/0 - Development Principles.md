@@ -186,10 +186,11 @@ DELETE - בקשה למחיקת המידע בשרת.
 כל בקשה ברסט אי פי אי הינה עצמאית ולא תלויה בבקשות אחרות.
 ברסט אי פי אי יש כתובות URL, כל כתובת כזו מייצגת שרת ברסט אי פי אי.
 כאשר הלקוח רוצה לשלוח בקשת HTTP מסוימת לשרת הוא יכול לפנות אליו באמצעות הכתובת הזו.
-5. **What is the Global Interpreter Lock (GIL) in Python?**  
+3. **What is the Global Interpreter Lock (GIL) in Python?**  
    Explain:
-   - What the GIL is and why it exists  
-   - How it affects multi-threading and CPU-bound vs I/O-bound tasks  
+   - What the GIL is and why it exists
+ בכל תוכנית שיש בה multithreading (שזה אומר שרצים על אותה יחידת העיבוד כמה תתי תהליכים בו זמנית) יש חשיבות לתזמון שבו כל אחד מתתי התהליכים יתבצע.
+        - How it affects multi-threading and CPU-bound vs I/O-bound tasks  
    - Differences (if any) in how the GIL behaves across Python versions  
    - What Python 3.14 introduces regarding optionally disabling the GIL and why this is significant  
    - Common strategies to work around its limitations (e.g., multiprocessing)
@@ -197,7 +198,7 @@ DELETE - בקשה למחיקת המידע בשרת.
    **Bonus:** Compare **FastAPI** and **Flask**.
    What are the architectural differences and when would you use each framework?
 
-6. What are e2e testings? What are **tests** in software development, and why are they important?  
+4. What are e2e testings? What are **tests** in software development, and why are they important?  
    Explain unit tests, integration tests, and the role of automated testing.
 
 7. What are **mocks**, and why are they used in testing?  
