@@ -215,6 +215,7 @@ DELETE - בקשה למחיקת המידע בשרת.
    עושים שימוש באובייקט המוק  כאשר מתבצעת בדיקת מוק, בשביל לבודד ולאמת פונקציונליות מסוימת של רכיב במערכת ללא תלות בשאר הרכיבים שלה.
    Compare **pytest** with other Python testing frameworks and explain its advantages.
    
+   
 
 ---
 
