@@ -174,10 +174,18 @@ What is the process for **safely undoing** a merged PR using git revert?
    
    
 
-3. What is a **REST API**?  
+2. What is a **REST API**?  
    Explain the core concepts such as resources, HTTP methods, and stateless communication.
-
-4. **What is the Global Interpreter Lock (GIL) in Python?**  
+רסט איפיאי הוא סוג של ממשק אי פי אי שבו מוגדרות אוסף של מתודות אשר בהם המפתחים יכולים לעשות שימוש כדי לשלוח בקשות ולקבל תגובות לישויות שונות ברשת על ידי השימוש במתודות הפרוטוקל HTTP.
+בארכיטקטורת רסט אי פי אי יש הפרדה בין הלקוח לשרת, הלקוח שולח בקשת HTTP לשרת והשרת מחזיר ללקוח תשובה בהתאם.
+ארבעת סוגי הבקשות HTTP הן: GET - בקשת מידע מהשרת
+, (שליחת מידע לשרת) POST
+, PUT - בקשה לעדכון המידע בשרת
+DELETE - בקשה למחיקת המידע בשרת.
+כל בקשה ברסט אי פי אי הינה עצמאית ולא תלויה בבקשות אחרות.
+ברסט אי פי אי יש כתובות URL, כל כתובת כזו מייצגת שרת ברסט אי פי אי.
+כאשר הלקוח רוצה לשלוח בקשת HTTP מסוימת לשרת הוא יכול לפנות אליו באמצעות הכתובת הזו.
+5. **What is the Global Interpreter Lock (GIL) in Python?**  
    Explain:
    - What the GIL is and why it exists  
    - How it affects multi-threading and CPU-bound vs I/O-bound tasks  
@@ -188,10 +196,10 @@ What is the process for **safely undoing** a merged PR using git revert?
    **Bonus:** Compare **FastAPI** and **Flask**.
    What are the architectural differences and when would you use each framework?
 
-5. What are e2e testings? What are **tests** in software development, and why are they important?  
+6. What are e2e testings? What are **tests** in software development, and why are they important?  
    Explain unit tests, integration tests, and the role of automated testing.
 
-6. What are **mocks**, and why are they used in testing?  
+7. What are **mocks**, and why are they used in testing?  
    Compare **pytest** with other Python testing frameworks and explain its advantages.
 
 ---
