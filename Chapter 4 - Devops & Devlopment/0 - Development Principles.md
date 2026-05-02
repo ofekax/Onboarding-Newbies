@@ -168,7 +168,7 @@ What is the process for **safely undoing** a merged PR using git revert?
 1. What is **Python**, and what are its main characteristics compared to other
    programming languages (for example c#)?  
    Discuss readability, ecosystem, and runtime behavior.
-   פייתון זו שפת תכנות מונחת עצמים ברמה גבוהה אשר בה התחביר יחסית פשוט וקל לקריאה ומזכיר את שפת האנוש.
+   פייתון זו שפת תכנות מונחת עצמים ברמה גבוהה אשר בה התחביר יחסית פשוט וקל לקריאה.
    פייתון מבוססת על קוד פתוח וזה מאפשר למפתחים לשתף פעולה זה עם זה במהלך תהליך הפיתוח ולהנגיש את קוד המקור.
    פייתון עושה שימוש באינטרפרטר עבור המרת הקוד לשפת מכונה ועבור הרצתו, כאשר מריצים את התוכנית הפייתון האינטרפרטר ממיר את קוד המשתמש לקוד המכונה שורה אחר שורה ולאחר מכן שורת הקוד מורצת פקודה אחר פקודה.
    
