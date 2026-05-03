@@ -173,6 +173,8 @@ Why does simple and intuitive software scale well?
 4-יש להימנע מביצוע כפילויות קוד
 5-יש לחלק את המערכת למודולים כאשר כל אחד מהם יוכל לתפקד באופן עצמאי.
 5. What are the most common **paradigms / programming** (ex. Object Orianted) styles, what are the differences and when should each be used
+   מה זה פרדיגמות תכנות?
+   פרדיגמות תכנות הם גישות שונות לפיתוח תוכנה, לכל גישה יש את המוסכמות והעקרונות המנחים שלה.
 Event-Driven-
  ,גישה שלפיה התקשורת בין רכיבי המערכת מתבצעת על בסיס אירועים שמתרחשים, לפי גישה זו על המערכת להגיב בהתאם לאירועים המתרחשים.
  Object oriented programming- גישה שלפיה המפתח עושה שימוש במחלקות ובאובייקטיםעב
@@ -182,7 +184,7 @@ Test Driven-
 גישה שלפיה על המפתח לכתוב קודם טסטים לקוד לפני שהוא נכתב.
 תכנות פונקציונלי- זוהי גישה שלפיה יש לעשות שימוש בפונקציות מטמטיות.
 
-6. What is **Test Driven Development (TDD)**?  
+7. What is **Test Driven Development (TDD)**?  
    Explain the development cycle and how it improves code reliability.
    זוהי גישת תכנות שלפיה על המפתח לכתוב טסטים לקוד לפני שהוא מתחיל לכתוב את הקוד עצמו שהולך לייצור.
    תהליך העבודה עם הגישה הזו מתחיל בכך שהמפתח כותב מבחן בהתאם לפונקציונליות הרצויה אותה רוצים לממש, בהתחלה המבחן זה נכשל מכייון שהקוד עצמו עדיין לא נכתב.
