@@ -248,17 +248,18 @@ What is the process for **safely undoing** a merged PR using git revert?
 4. Explain the difference between **CLI (Command Line Interface)** and
    **UI (User Interface)** applications.  
    What are the benefits of each?
-עם UI המשתמש מתממשק בצורה ויזואלית ואילו עם CLI המשתמש מתממשק באופן טקסטואלי באמצעות הרצת פקודות.
-היתרון של הUI הוא שלמשתמש יותר נוח ופשוט להתממשק איתו (מכיוון שבו לא נדרש מהמשתמש לדעת פקודות וחוקי תחביר ספציפיים בשונה מCLI).
+עם GUI המשתמש מתממשק בצורה ויזואלית ואילו עם CLI המשתמש מתממשק באופן טקסטואלי באמצעות הרצת פקודות.
+היתרון של הGUI הוא שלמשתמש יותר נוח ופשוט להתממשק איתו (מכיוון שבו לא נדרש מהמשתמש לדעת פקודות וחוקי תחביר ספציפיים בשונה מCLI).
 הCLI מציע למשתמש פונקציונליות גדולה יותר שבה הוא יכול לעשות שימוש וגם הוא מאפשר לו לבצע פעולות באופן יעיל יותר.
+הCLI והGUI הם למעשה 2 סוגי UI שונים.
 
-5. What is the difference between a **compiler** and an **interpreter**?  
+6. What is the difference between a **compiler** and an **interpreter**?  
    Provide examples of languages that use each approach.
 בגישת הinterpreter האינטרפרטר ממיר ומריץ את קוד הרמה הגבוהה של המערכת שורה אחר שורה (כל שורה בקוד מומרת לשפת מכונה ואז לאחר מכן מורצת).
 בגישת ה-compiler הקומפילר מקמפל (כלומר ממיר אותו לקוד שיהיה קריא עבור המכונה) את כל קוד הרמה הגבוהה של המערכת ורק לאחר מכן מאפשר את הרצתו.
 שפות בהם יש שימוש ב-interpreter: פייתון, גאבה סקריפט,  באש, ועוד...
 שפות בהם יש שימוש בקומפילר: גאבה, סי  שארפ ועוד..
-6. What is **event-driven programming**?  
+7. What is **event-driven programming**?  
    Explain how it differs from procedural execution and where it is commonly used.
    אבנט דריבן זוהי פרדיגמת תכנות אשר בה ביצועי המערכת מבוססים על אירועים.
    לפי הפרדיגמה על המערכת להגיב לאירועים שמתקבלים באמצעות פעולות מוגדרות מראש.
