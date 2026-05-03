@@ -188,21 +188,26 @@ DELETE - בקשה למחיקת המידע בשרת.
 כאשר הלקוח רוצה לשלוח בקשת HTTP מסוימת לשרת הוא יכול לפנות אליו באמצעות הכתובת הזו.
 3. **What is the Global Interpreter Lock (GIL) in Python?**  
    Explain:
-   - What the GIL is and why it exists
- בכל תוכנית שיש בה multithreading (שזה אומר שרצים על אותה יחידת העיבוד כמה תתי תהליכים בו זמנית) יש חשיבות לתזמון שבו כל אחד מתתי התהליכים יתבצע.
-        - How it affects multi-threading and CPU-bound vs I/O-bound tasks  
+   - What the GIL is and why it exists.
+   - How it affects multi-threading and CPU-bound vs I/O-bound tasks  
    - Differences (if any) in how the GIL behaves across Python versions  
    - What Python 3.14 introduces regarding optionally disabling the GIL and why this is significant  
    - Common strategies to work around its limitations (e.g., multiprocessing)
+בכל תוכנית שיש בה multithreading (שזה אומר שרצים על אותה יחידת העיבוד כמה תתי תהליכים בו זמנית) יש חשיבות לתזמון שבו כל אחד מתתי התהליכים יתבצע.
+הגיל הוא למעשה נעילה שמתבצעת אשר מאפשרת רק לטרד אחד לבצע בייטקוד (קוד שאותו האינטרפרטר מבין) באותה נקודת זמן, ולמעשה הוא את פייתון להריץ טרד אחד בכל רגע נתון.
+מכיוון שהגיל מונע מכמה טרדים לרוץ במקביל, תוכניות פייתון מרובות טרדים אינן מנוצלות במלאן את יכולתם של מעבדים מרובי ליבות, זה יכול להוות כחיסרון משמעותי עבור מפתחים שרוצים  לעשות שימוש במולטי טרדינג במערכת שלהם במטרה לשפר את ביצועיה.
+עבור משימות הקשורות לקלט או פלט ההשפעה של הגיל פחות מורגשת מכיוון שנעילתו משתחררת כאשר הוא ממתין להשלמת פעולת הקלט או הפלט, וזה מאפשר לטרדים אחרים לרוץ עד שהפעולה תתבצע.
+   
+
 
    **Bonus:** Compare **FastAPI** and **Flask**.
    What are the architectural differences and when would you use each framework?
    פאסט אי פי אי יותר יכול להתמודד עם עומסי עבודה, הוא יכול לטפל בטווח של 15,000-20,000 בקשות לשנייה לאומת פלאסק, שהוא יכול לטפל רק ב2,000-3,000.
    פלאסק קיים הרבה יותר זמן מאשר פאסט אי פי אי, ולכן יש יותר ניסיון פיתוחי איתו ויותר קל ללמוד אותו מאשר פאסט אי פי אי, ניתן למצוא ברשת יותר מידע מפורט ומעמיק עליו.
   בשונה מפלאסק, פאסט איפיאי מציע תמיכה מובנת באימות נתונים על ידי השימוש בספריית pydentic ובביצוע משימות באופן א- סינכורני (כלומר המשימות יכולות להתבצע באופן מקבילי ומונעות עיכוב בריצת המערכת בכך שאין צורך לחכות שמשימה תסתיים על מנת שהמשימה הבאה תרוץ).
-   
 
-4. What are e2e testings? What are **tests** in software development, and why are they important?  
+
+5. What are e2e testings? What are **tests** in software development, and why are they important?  
    Explain unit tests, integration tests, and the role of automated testing.
  טסטים בפיתוח תוכנה בודיקים ומאמתים שהמערכת מתפקדת בצורה תקינה ומאובטחת בהתאם לדרישותיה.
  ה-e2e  זוהי בדיקה שמטרתה לבדוק ולאמת את כל מהלך העבודה של המערכת מתחילתה ועד סופה, בדיקות אלו למעשה מוודאות שכל רכיבי המערכת (הדאטה באיסים, הסרוויסים וכו) עובדים ביחד באופן תקין.
@@ -214,7 +219,7 @@ DELETE - בקשה למחיקת המידע בשרת.
 אם במהלך הבדיקה התגלתה תקלה במערכת או שתשובת הבדיקה הייתה שונה מהצפוי המערכת תתריע על כך.
 
    
-5. What are **mocks**, and why are they used in testing?
+6. What are **mocks**, and why are they used in testing?
    מוק זה אובייקט שנוצר במטרה לחקות את התנהוגותו של אובייקט או רכיב מסוים במערכת.
    עושים שימוש באובייקט המוק  כאשר מתבצעת בדיקת מוק, בשביל לבודד ולאמת פונקציונליות מסוימת של רכיב במערכת ללא תלות בשאר הרכיבים שלה.
    Compare **pytest** with other Python testing frameworks and explain its advantages.
