@@ -291,11 +291,12 @@ What is the process for **safely undoing** a merged PR using git revert?
 ארבעת סוגי הבקשות HTTP הן: GET - בקשת מידע מהשרת
 , (שליחת מידע לשרת) POST
 , PUT - בקשה לעדכון המידע בשרת
+PEACH- בקשה לביצוע שינוי חלקי של המידע בשרת
 DELETE - בקשה למחיקת המידע בשרת.
 כל בקשה ברסט אי פי אי הינה עצמאית ולא תלויה בבקשות אחרות.
 ברסט אי פי אי יש כתובות URL, כל כתובת כזו מייצגת שרת ברסט אי פי אי.
 כאשר הלקוח רוצה לשלוח בקשת HTTP מסוימת לשרת הוא יכול לפנות אליו באמצעות הכתובת הזו.
-3. **What is the Global Interpreter Lock (GIL) in Python?**  
+4. **What is the Global Interpreter Lock (GIL) in Python?**  
    Explain:
    - What the GIL is and why it exists.
    - How it affects multi-threading and CPU-bound vs I/O-bound tasks  
