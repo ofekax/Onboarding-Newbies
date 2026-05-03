@@ -58,16 +58,108 @@ Single Responsibility Principle (SRP)-
 Open/Closed Principle (OCP)-
 העקרון אומר שעל הקוד להיות פתוח להרחבות אך סגור לשינויים, כלומר על הקוד הקיים יש לאפשר הרחבות אך ללא ביצוע שינויים בו.
 עקרון זה מאפשר להרחיב את פונקציונליות הקוד מבלי להפריע לאופן התפקוד של הקוד שכבר קיים ולפגוע ביציבות המערכת.
+קוד שמראה דוגמא למימוש:
+class Circle {
+    constructor(radius) {
+        this.radius = radius;
+    }
+ 
+    area() {
+        return Math.PI * this.radius * this.radius;
+    }
+}
+ 
+class Rectangle {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+ 
+    area() {
+        return this.width * this.height;
+    }
+}
+ 
+class AreaCalculator {
+    calculate(shape) {
+        return shape.area();
+    }
+}
+בקוד למעלה נעשה שימוש בעיקרון הפולימורפיזם על מנת לאפשר את הרחבת הקוד הקיים מבלי לשנות אותו.
+
 Liskov Substitution Principle (LSP)-
 עקרון זה אומר זתתי מחלקות צריכות להיות תואמות וקשורות למחלקות האב שלהן.
 כלומר, על תתי המחלקות לתמוך בכלל הפונקציונליות והתכונות של מחלקות האב שלהן.
+דוגמא למימוש:
+class Shape {
+    getArea() {
+        throw new Error("This method should be overridden!");
+    }
+}
+ 
+class Rectangle extends Shape {
+    constructor(width, height) {
+        super();
+        this.width = width;
+        this.height = height;
+    }
+ 
+    getArea() {
+        return this.width * this.height;
+    }
+}
+ 
+class Square extends Shape {
+    constructor(side) {
+        super();
+        this.side = side;
+    }
+ 
+    getArea() {
+        return this.side * this.side;
+    }
+}
+בקוד הזה כל מחלקת בן של המחלקה שאפ מיישמת את הפונקצייה getArea בצורה שמתאימה לה
 Interface Segregation Principle (ISP)-
-עקרון זה אומר שמחלקות לא צריכות להיות תלויות בממשקים שהן לא עושות בהם שימוש.
-לפי עקרון זה כל מחלקה צריכה ליישם  רק את הממשקים שהינם הכרחיים עבורה על שהתלות והמורכסות בקוד תופחת.
+עקרון זה אומר שצריך להימנע ממקרים בהם מחלקות מכריחות את המשתמשים שלהם ליישם פונקציות  שהם לא זקוקים להן, במקום זאת צריך לפצל את הממשקים הגדולים לממשקים קטנים וממוקדים יותר.
+דוגמא:
+class Worker {
+    work() {}
+    eat() {}
+    sleep() {}
+}
+הממשק הזה סותר את עיקרון מזה מכיוון שהממשקג הינו מכיל יותר מידי פונקציות, יש לפרק אותו ל3 ממשקים כאשר כל ממשק יכיל בתוכו פונקצייה אחת על מנת שהמשתמשים יכלו ליישם רק את הממשקים המכילים את הפונקציה שרלוונטית להם.
 Dependency Inverted Principle (DIP)-
-עקרון זה אומר שיש לעשות שימוש בממשקים ובמחלקות אבסטרקטיות על מנת שהקוד יהיה יותר מופשט,גמיש וקל לתחזוקה.
+עקרון זה אומר שיש לתעדף שימוש בממשקים ובמחלקות אבסטרקטיות מאשר שימוש במחלקות רגילות על מנת שהקוד יהיה יותר מופשט.
+דוגמה:
+class Database {
+    connect() {}
+}
+ 
+class UserRepository {
+    constructor() {
+        this.database = new Database();
+    }
+}
+מחלקת היוזר ריפוסיטורי תלויה במחלקת הדאטה בס בקוד, לפי עקרון זה יש לעשות שימוש בממשקים כדי להפריד את התלותיות לפי הקוד הבא:
+class IDatabase {
+    connect() {}
+}
+ 
+class Database extends IDatabase {
+    connect() {}
+}
+ 
+class UserRepository {
+    constructor(database) {
+        this.database = database;
+    }
+}
 
-3. Explain the **KISS principle** and its importance in software design.
+
+
+
+4. Explain the **KISS principle** and its importance in software design.
 Why does simple and intuitive software scale well?  
    Why do overly complex systems tend to fail over time?
 עיקרון הקיס אומר שיש לעשות שימוש בדרך פשוטה ככל שאפשר במהלך ביצוע הפיתוח בשביל להשיג את הפונקציונליות או התוצאות הרצויות.
@@ -80,7 +172,7 @@ Why does simple and intuitive software scale well?
 3-יש לייחס חשיבות לקריאות הקוד
 4-יש להימנע מביצוע כפילויות קוד
 5-יש לחלק את המערכת למודולים כאשר כל אחד מהם יוכל לתפקד באופן עצמאי.
-4. What are the most common **paradigms / programming** (ex. Object Orianted) styles, what are the differences and when should each be used
+5. What are the most common **paradigms / programming** (ex. Object Orianted) styles, what are the differences and when should each be used
 Event-Driven-
  ,גישה שלפיה התקשורת בין רכיבי המערכת מתבצעת על בסיס אירועים שמתרחשים, לפי גישה זו על המערכת להגיב בהתאם לאירועים המתרחשים.
  Object oriented programming- גישה שלפיה המפתח עושה שימוש במחלקות ובאובייקטיםעב
