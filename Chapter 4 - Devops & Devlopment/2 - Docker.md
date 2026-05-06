@@ -35,7 +35,9 @@ Day 1 – Docker Core Concepts
 
 1. **What is Docker and what problems does it solve?**  
    Explain what a container is, how it differs from a virtual machine, and why containers are useful in modern systems (portability, consistency, isolation).
-דוקר זו פלטפורמה טכנולוגית המאפשרת לארוז מערכות ולהריץ אותן בסביבות מבודדות, ניידות עצמאיות ומרוחקות ביחד עם כל הרכיבים שהמערכות צריכות בשביל לרוץ (ספריות, קבצי קונפיגורציה וכו). הסביבות הללו נקראות קונטיינרים.
+דוקר זו פלטפורמה טכנולוגית המאפשרת לארוז מערכות ולהריץ אותן בסביבות מבודדות, ניידות עצמאיות ומרוחקות הנקראות קונטיינרים.
+"אריזת" המערכות מתקיימת באמצעות ה- Images, הimages מכילים את כל הרכיבים שהמערכות צריכות בשביל לרוץ (ספריות, קבצי קונפיגורציה, מערכות הפעלה וכו).
+הקונטינר הוא למעשה מופע של image, כאשר מריצים את פקודת הדוקר שמריצה image (הפקודה: docker run), הוא יוצר מה- image קונטיינר.
 
 3. **What are the core Docker components and how do they interact?**  
 
