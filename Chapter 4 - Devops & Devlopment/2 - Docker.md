@@ -35,7 +35,7 @@ Day 1 – Docker Core Concepts
 
 1. **What is Docker and what problems does it solve?**  
    Explain what a container is, how it differs from a virtual machine, and why containers are useful in modern systems (portability, consistency, isolation).
-
+דוקר זו פלטפורמה טכנולוגית המאפשרת לארוז מערכות ולהריץ אותן בסביבות מבודדות, ניידות ומרוחקות הנקראות קונטינרס.
 2. **What are the core Docker components and how do they interact?**  
 
 
