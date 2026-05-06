@@ -35,24 +35,25 @@ Day 1 – Docker Core Concepts
 
 1. **What is Docker and what problems does it solve?**  
    Explain what a container is, how it differs from a virtual machine, and why containers are useful in modern systems (portability, consistency, isolation).
-דוקר זו פלטפורמה טכנולוגית המאפשרת לארוז מערכות ולהריץ אותן בסביבות מבודדות, ניידות ומרוחקות הנקראות קונטינרס.
-2. **What are the core Docker components and how do they interact?**  
+דוקר זו פלטפורמה טכנולוגית המאפשרת לארוז מערכות ולהריץ אותן בסביבות מבודדות, ניידות עצמאיות ומרוחקות ביחד עם כל הרכיבים שהמערכות צריכות בשביל לרוץ (ספריות, קבצי קונפיגורציה וכו). הסביבות הללו נקראות קונטיינרים.
+
+3. **What are the core Docker components and how do they interact?**  
 
 
-3. **How do networking and storage work in Docker?**  
+4. **How do networking and storage work in Docker?**  
    Explain:
    - Container networking (bridge, host, ports)  
    - Communication between containers  
    - Volumes vs bind mounts  
    - When to use persistent storage
 
-4. **What are the security and isolation risks in Docker?**  
+5. **What are the security and isolation risks in Docker?**  
    Discuss:
    - Namespaces and cgroups (high-level)  
    - Running containers as root vs non-root  
    - Image vulnerabilities and best practices
 
-5. **How are Docker images built in different environments?**  
+6. **How are Docker images built in different environments?**  
    Compare:
    - Standard Docker build  
    - Docker-in-Docker (DinD)  
