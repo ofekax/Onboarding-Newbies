@@ -79,18 +79,22 @@ Day 1 – Docker Core Concepts
 
 3. **How do networking and storage work in Docker?**  
    Explain:
-   - Container networking (bridge, host, ports)  
+   לאחר שמפתח מתממשק עם הCLI של דוקר בפעם הראשונה יש לו באופן דיפולטי רשת מובנת הנקראת "default bridge".
+   כאשר המשתמש מריץ קונטינר מבלי הגדרת רשת אחרת הוא יחובר באופן אותמטי לרשת הדיפולטית.
+   הקונטיינרים המחבורים לרשת הדיפולט ברינג יכולים לתקשר אחד עם השני ברשת באמצעות כתובות הIP של הקונטיינרים.
+   - Container networking (bridge, host, ports)
    - Communication between containers  
    - Volumes vs bind mounts  
    - When to use persistent storage
 
-4. **What are the security and isolation risks in Docker?**  
+
+5. **What are the security and isolation risks in Docker?**  
    Discuss:
    - Namespaces and cgroups (high-level)  
    - Running containers as root vs non-root  
    - Image vulnerabilities and best practices
 
-5. **How are Docker images built in different environments?**  
+6. **How are Docker images built in different environments?**  
    Compare:
    - Standard Docker build  
    - Docker-in-Docker (DinD)  
