@@ -55,22 +55,34 @@ Day 1 – Docker Core Concepts
    
    
 2. **What are the core Docker components and how do they interact?**  
+לקוח:
+תפקיד הרכיב הוא לבצע התממשקות עם המשתמש, לאחר שהמשתמש מזין פקודות דוקר הרכיב שולח אותן לדמון (רכיב שעליו אני אסביר בהמשך) והוא מפעיל את הקונטיינר.
+דמון:
+הוא אחראי על:
+   -ניהול הפקודות שהתקבלו מהלקוח ועל פיקוח ביצועם.
+   -תקשורת הקונטיינרים עם רכיבים הכרחיים למערכת, ביניהם רכיבים רשתיים תשתיתיים וכו.
+   -העברת המשאבים הדרושים לריצת הקונטיינר מהקרנל של מערכת ההפעלה.
+   -אינטרקציה עם הרגיסטרי לאחר ביצוע פקודת פוש או פול מצד המשתמש.
+רגיסטרי:
+   מקום שבו מאחסנים אימגים וקונטיינרים שאחרים יצרו או אנחנו יצרנו.
+   
+   
+   
 
-
-3. **How do networking and storage work in Docker?**  
+4. **How do networking and storage work in Docker?**  
    Explain:
    - Container networking (bridge, host, ports)  
    - Communication between containers  
    - Volumes vs bind mounts  
    - When to use persistent storage
 
-4. **What are the security and isolation risks in Docker?**  
+5. **What are the security and isolation risks in Docker?**  
    Discuss:
    - Namespaces and cgroups (high-level)  
    - Running containers as root vs non-root  
    - Image vulnerabilities and best practices
 
-5. **How are Docker images built in different environments?**  
+6. **How are Docker images built in different environments?**  
    Compare:
    - Standard Docker build  
    - Docker-in-Docker (DinD)  
