@@ -102,6 +102,8 @@ Day 1 – Docker Core Concepts
    - Namespaces and cgroups (high-level)  
    - Running containers as root vs non-root  
    - Image vulnerabilities and best practices
+     דוקר עושה שימוש בנאמספסס וסיגרופס שבלינוקס כדי להבטיח לבודד את הקונטיינרים אחד מהשני ושלכל קונטיינר יוכל לעשות שימוש בכמות משאבים המוקצאת לו.
+באמצעות הנאימספס כל קונטיננר יכול לרוץ בסביבה מבודדת ובזכות הסי גרופס כל לכל סביבה מבודדת שבה הקונטיינר רץ יש כמות משאבים מוגבלת שבה הקונטיינר יכול לעשות שימוש.
 
 5. **How are Docker images built in different environments?**  
    Compare:
