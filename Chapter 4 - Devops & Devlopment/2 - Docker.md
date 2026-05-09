@@ -97,13 +97,13 @@ Day 1 – Docker Core Concepts
    - When to use persistent storage
 
 
-5. **What are the security and isolation risks in Docker?**  
+4. **What are the security and isolation risks in Docker?**  
    Discuss:
    - Namespaces and cgroups (high-level)  
    - Running containers as root vs non-root  
    - Image vulnerabilities and best practices
 
-6. **How are Docker images built in different environments?**  
+5. **How are Docker images built in different environments?**  
    Compare:
    - Standard Docker build  
    - Docker-in-Docker (DinD)  
