@@ -2,9 +2,9 @@
 
 from fastapi.testclient import TestClient
 
-from pizza_api_project.main import app
-from pizza_api_project.models.pizza import OrderRequest
-from pizza_api_project.models.pizza_order import PizzaOrder
+from main import app
+from models.pizza import OrderRequest
+from models.pizza_order import PizzaOrder
 client = TestClient(app)
 
 

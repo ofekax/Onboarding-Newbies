@@ -1,6 +1,6 @@
-from pizza_api_project.db_handler.database_orm import save_order_to_db
-from pizza_api_project.models.order import Order
-from pizza_api_project.models.pizza import PizzaItem, OrderRequest
+from db_handler.database_orm import save_order_to_db
+from models.order import Order
+from models.pizza import PizzaItem, OrderRequest
 
 
 class PizzaOrder(Order):
