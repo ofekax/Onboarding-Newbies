@@ -47,8 +47,12 @@ Use the resources below as your primary reference:
 
 2. Describe the main Kubernetes components and architecture.  
    Include: cluster, nodes, control plane, kubelet, API server, etcd.
-   קוברנטיס קלסטר- הקלסטר של קוברנטיס מורכב מ control plane ומנוד אחד לפחות (וכל נוד הוא למעשה מכונה, היא יכולה להיות או פיזית או וירטואלית).
-3. What are the core Kubernetes resources?  
+   קוברנטיס קלסטר- קלאסטר הוא קבוצה של מכונות הנקראות נודים (קלאסטר מכיל נוד אחד לפחות), המשמשים להרצת הקונטיינרים שמנוהלים על ידי הקוברנטיס.
+   קונטרול פלן- הקונטרולר פלן מנהל את הנודים והפודים בכל הקלאסטר בצורה כזו שזמינותו תהיה גבוהה והוא מורכב מ:Kubernetes API (הוא למעשה שרת שחושף את הHTTP APIשל קוברניטיס), המתזמן של קוברנטיס (רכיב שמחפש פודים שלא מקושרים לנודים, ומקצה כל פוד לנוד מתאים), ו הetcd (רכיב שהוא מאגר המבוסס על מפתחות וערכים המאחסן את כל נתוני השרת קוברנטיס API והנתונים שמאוחסנים בו עקביים וזמינים).
+   נוד- נוד הוא מכונה וירטואלית או פיזית אשר חלק מקלסטר הקוברנטיס.
+   הנוד מורכב מkubelet- רכיב שמוודא שהפודים והקונטיינרים שבתוכם רצים.
+
+4. What are the core Kubernetes resources?  
    Explain Pods, Stateful sets, daemon sets , limit ranges, pv and PVC, namespaces, cronjobs, jobs, roles, rolebindings  Deployments, Services, ConfigMaps, and Secrets, and how they interact.
 
 6. How does networking work in Kubernetes?  
