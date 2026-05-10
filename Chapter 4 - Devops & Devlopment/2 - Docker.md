@@ -109,9 +109,13 @@ Day 1 – Docker Core Concepts
 
 5. **How are Docker images built in different environments?**  
    Compare:
-   - Standard Docker build  
-   - Docker-in-Docker (DinD)  
-   - Kaniko  
+   - Standard Docker build
+     בניית התמונה בדוקר הסטנדרתי מתבצעת על ידי הרצת הפקודה docker build -t image_name בטרמינל.
+     בדוקר התמונות לא ניתנות לשינוי, כדי לבצע שינוי יש לבנות תמונה חדשה.
+   - Docker-in-Docker (DinD)
+     בDIND נבנת תמונת דוקר בתוך קונטיינר פועל של דוקר, מפתחים משתמשים בו עבור בניית CI CD וקוברנטיס.
+   - Kaniko
+     קניקו מאפשר לבנות תמונת דוקר באמצעות הקובץ docker file.
    Explain when each approach is used (e.g., CI/CD pipelines, Kubernetes).
 
 ---
