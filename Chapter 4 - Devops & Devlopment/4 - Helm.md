@@ -75,9 +75,9 @@ Use the resources below as your primary reference:
    
    
    
-6. How does networking work in Kubernetes?  
+4. How does networking work in Kubernetes?  
    Explain Service types (ClusterIP, NodePort,Ingress,Internal or external network) and basic communication between pods.
-
+- הClusterIP - בסוג הסרוויס הזה הסרוויס נגיש רק מתוך הקלסטר דיפולטית, הסרוויס נחשף באמצעות כתובת IP פנימית בתוך הקלסטר
 7. What is Helm, and why is it used?  
    Explain charts, values.yaml, templating, and how Helm simplifies deployments.
 
