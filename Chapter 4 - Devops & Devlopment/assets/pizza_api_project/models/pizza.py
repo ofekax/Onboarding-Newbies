@@ -1,7 +1,7 @@
-from pydantic import BaseModel, validator, model_validator
+from pydantic import BaseModel, validator
 from typing import List
 
-from conf import special_characters
+from pizza_api_project.conf import special_characters
 
 
 class PizzaItem(BaseModel):
