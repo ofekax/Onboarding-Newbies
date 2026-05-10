@@ -45,16 +45,16 @@ Use the resources below as your primary reference:
 - כאשר קונטיינר קורס קוברנטיס מחליף אותובקונטינר חדש ותקין באופן אוטומטי.
 - קוברנטיס מאפשר לקונטיינרים יותר יעילות בניצול משאבי החומרה מאשר ממכונות וירטואליות.
 
-3. Describe the main Kubernetes components and architecture.  
+2. Describe the main Kubernetes components and architecture.  
    Include: cluster, nodes, control plane, kubelet, API server, etcd.
-
-4. What are the core Kubernetes resources?  
+   קוברנטיס קלסטר- הקלסטר של קוברנטיס מורכב מ control plane ומנוד אחד לפחות (וכל נוד הוא למעשה מכונה, היא יכולה להיות או פיזית או וירטואלית).
+3. What are the core Kubernetes resources?  
    Explain Pods, Stateful sets, daemon sets , limit ranges, pv and PVC, namespaces, cronjobs, jobs, roles, rolebindings  Deployments, Services, ConfigMaps, and Secrets, and how they interact.
 
-5. How does networking work in Kubernetes?  
+6. How does networking work in Kubernetes?  
    Explain Service types (ClusterIP, NodePort,Ingress,Internal or external network) and basic communication between pods.
 
-6. What is Helm, and why is it used?  
+7. What is Helm, and why is it used?  
    Explain charts, values.yaml, templating, and how Helm simplifies deployments.
 
 ---
