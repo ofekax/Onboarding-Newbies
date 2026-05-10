@@ -50,7 +50,7 @@ Use the resources below as your primary reference:
    קוברנטיס קלסטר- קלאסטר הוא קבוצה של מכונות הנקראות נודים (קלאסטר מכיל נוד אחד לפחות), המשמשים להרצת הקונטיינרים שמנוהלים על ידי הקוברנטיס.
    קונטרול פלן- הקונטרולר פלן מנהל את הנודים והפודים בכל הקלאסטר בצורה כזו שזמינותו תהיה גבוהה והוא מורכב מ:Kubernetes API (הוא למעשה שרת שחושף את הHTTP APIשל קוברניטיס), המתזמן של קוברנטיס (רכיב שמחפש פודים שלא מקושרים לנודים, ומקצה כל פוד לנוד מתאים), ו הetcd (רכיב שהוא מאגר המבוסס על מפתחות וערכים המאחסן את כל נתוני השרת קוברנטיס API והנתונים שמאוחסנים בו עקביים וזמינים).
    נוד- נוד הוא מכונה וירטואלית או פיזית אשר חלק מקלסטר הקוברנטיס.
-   הנוד מורכב מkubelet- רכיב שמוודא שהפודים והקונטיינרים שבתוכם רצים.
+   כל נוד מורכב מkubelet- רכיב שמוודא שהפודים והקונטיינרים שבתוכם רצים, ומ-Container runtime- רכיב תוכנה שאחראי להפעיל את הקונטיינרים שבתוך הנוד .
 
 4. What are the core Kubernetes resources?  
    Explain Pods, Stateful sets, daemon sets , limit ranges, pv and PVC, namespaces, cronjobs, jobs, roles, rolebindings  Deployments, Services, ConfigMaps, and Secrets, and how they interact.
