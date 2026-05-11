@@ -15,6 +15,7 @@ def test_success_save_order_func(mock_save_order_to_db_func):
     order_data = {'customer_name': 'ofek', 'pizzas': [{"name": "Margherita", "price": 10.0}]}
     order_request: OrderRequest = OrderRequest(**order_data)
     pizza_order: PizzaOrder = PizzaOrder(order_request)
+
     # Assert + Act
     assert pizza_order.save_order() is True
 
@@ -22,8 +23,10 @@ def test_success_save_order_func(mock_save_order_to_db_func):
 # Arrange
 @patch('models.pizza_order.PizzaOrder.the_items_list_is_empty', return_value=True)
 def test_fail_post_order_endpoint(mock_order) -> None:
+
     # Act
     response = client.post("/orders", json={'customer_name': 'ofek', 'pizzas': []})
+
     # Assert
     assert response.status_code == 400
 
@@ -31,15 +34,19 @@ def test_fail_post_order_endpoint(mock_order) -> None:
 # Arrange
 @patch('models.pizza_order.PizzaOrder.the_items_list_is_empty', return_value=False)
 def test_success_post_order_endpoint(mock_order) -> None:
+
     # Act
     response = client.post("/orders", json={'customer_name': 'ofek', 'pizzas': [{"name": "Margherita", "price": 10.0}]})
+
     # Assert
     assert response.status_code == 200
 
 # Arrange
 def test_get_menu() -> None:
+
     # Act
     response = client.get("/menu")
+
     # Assert
     assert response.status_code == 200
     assert len(response.json()) == 3
