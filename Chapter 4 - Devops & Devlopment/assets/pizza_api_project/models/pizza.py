@@ -1,7 +1,8 @@
 from pydantic import BaseModel, validator
 from typing import List
 
-from conf import special_characters
+from validation.validate_name import name_doesnt_contain_special_characters
+from validation.validate_price import price_is_bigger_then_zero
 
 
 class PizzaItem(BaseModel):
@@ -9,18 +10,18 @@ class PizzaItem(BaseModel):
     price: float
 
     @validator("name")
-    def name_cannot_contain_non_alphabetic_characters(cls, name: str):
-        if any(char in special_characters for char in name):
-            raise ValueError("name cannot contain special characters")
-        return name.title()
+    def name_validation(cls, name: str):
+        name_doesnt_contain_special_characters(name=name)
 
     @validator("price")
-    def price_is_bigger_then_zero(cls, price: float):
-        if price <= 0.0:
-            raise ValueError("the price most be bigger than 0")
-        return price
+    def validate_price(cls, price: float):
+        price_is_bigger_then_zero(price=price)
 
 
 class OrderRequest(BaseModel):
     customer_name: str
     pizzas: List[PizzaItem]
+
+    @validator("name")
+    def name_validation(cls, name: str):
+        name_doesnt_contain_special_characters(name=name)
