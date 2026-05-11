@@ -20,4 +20,5 @@ if __name__ == "__main__":
 
 @app.get("/")
 def root():
+
     return {"message": "Welcome to the Pizza API"}

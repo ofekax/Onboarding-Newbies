@@ -9,7 +9,7 @@ client = TestClient(app)
 
 
 # Arrange
-@patch('pizza_api_project.db_handler.database_orm.save_order_to_db')
+@patch('db_handler.database_orm.save_order_to_db')
 def test_success_save_order_func(mock_save_order_to_db_func):
     mock_save_order_to_db_func.return_value = True
     order_data = {'customer_name': 'ofek', 'pizzas': [{"name": "Margherita", "price": 10.0}]}
@@ -20,7 +20,7 @@ def test_success_save_order_func(mock_save_order_to_db_func):
 
 
 # Arrange
-@patch('pizza_api_project.models.pizza_order.PizzaOrder.the_items_list_is_empty', return_value=True)
+@patch('models.pizza_order.PizzaOrder.the_items_list_is_empty', return_value=True)
 def test_fail_post_order_endpoint(mock_order) -> None:
     # Act
     response = client.post("/orders", json={'customer_name': 'ofek', 'pizzas': []})
@@ -29,17 +29,18 @@ def test_fail_post_order_endpoint(mock_order) -> None:
 
 
 # Arrange
-@patch('pizza_api_project.models.pizza_order.PizzaOrder.the_items_list_is_empty', return_value=False)
+@patch('models.pizza_order.PizzaOrder.the_items_list_is_empty', return_value=False)
 def test_success_post_order_endpoint(mock_order) -> None:
     # Act
     response = client.post("/orders", json={'customer_name': 'ofek', 'pizzas': [{"name": "Margherita", "price": 10.0}]})
     # Assert
     assert response.status_code == 200
 
-
+# Arrange
 def test_get_menu() -> None:
     # Act
     response = client.get("/menu")
+    # Assert
     assert response.status_code == 200
     assert len(response.json()) == 3
     assert response.json()[0]["name"] == "Margherita"
