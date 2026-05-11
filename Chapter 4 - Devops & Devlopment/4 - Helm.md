@@ -90,7 +90,7 @@ Use the resources below as your primary reference:
 
 5. What is Helm, and whyThis is the default that is used if you don't explicitly specify a type for a Service. You can expose the Service to the public internet using an Ingress or a Gateway. is it used?  
    Explain charts, values.yaml, templating, and how Helm simplifies deployments.
-
+הלם הוא כלי לניהול חבילות עבור קוברנטיס אשר מאפשר לנהל ולהתקין אפליקציות על פני קלסטרים של קוברנטיס.
 ---
 
 # Day 2 – Hands-On Labs (Kubernetes & Helm)
