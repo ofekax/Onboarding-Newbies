@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-import uuid
+from uuid import uuid4
 from typing import List, Any
 
 
@@ -20,9 +20,9 @@ class CreateOrder(ABC):
 class Order(CreateOrder, ABC):
     customer_name: str
     items: List[Any]
-    order_id: uuid
+    order_id: uuid4
 
     def __init__(self, customer_name: str, items: List[Any]):
         self.customer_name = customer_name
         self.items = items
-        self.order_id = uuid.uuid4()
+        self.order_id = uuid4()

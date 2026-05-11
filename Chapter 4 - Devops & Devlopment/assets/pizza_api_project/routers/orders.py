@@ -1,12 +1,12 @@
-
 from fastapi import APIRouter, HTTPException
-from pizza_api_project.models.pizza import PizzaItem, OrderRequest
-from pizza_api_project.models.pizza_order import PizzaOrder
+from models.pizza import PizzaItem, OrderRequest
+from models.pizza_order import PizzaOrder
 
 router = APIRouter()
 
 @router.get("/menu")
 def get_menu():
+
     return [
         {"name": "Margherita", "price": 10.0},
         {"name": "Pepperoni", "price": 12.5},
@@ -21,4 +21,5 @@ def create_order(order: OrderRequest):
         pizza_order: PizzaOrder = PizzaOrder(order)
         pizza_order.save_order()
         print(pizza_order.return_success_msg())
+
         return order
