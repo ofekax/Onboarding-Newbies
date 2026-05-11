@@ -23,5 +23,5 @@ class OrderRequest(BaseModel):
     pizzas: List[PizzaItem]
 
     @validator("name")
-    def name_validation(cls, name: str):
-        name_doesnt_contain_special_characters(name=name)
+    def name_validation(cls, customer_name: str):
+        name_doesnt_contain_special_characters(name=customer_name)
