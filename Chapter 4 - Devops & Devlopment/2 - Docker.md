@@ -121,6 +121,7 @@ Day 1 – Docker Core Concepts
      בDIND נבנת תמונת דוקר בתוך קונטיינר פועל של דוקר, מפתחים משתמשים בו עבור בניית CI CD וקוברנטיס.
    - Kaniko
      קניקו מאפשר לבנות תמונת דוקר באמצעות הקובץ docker file.
+     משתמשים עושים בו שימוש עבור CI-CD וקוברנטיס.
    Explain when each approach is used (e.g., CI/CD pipelines, Kubernetes).
 
 
