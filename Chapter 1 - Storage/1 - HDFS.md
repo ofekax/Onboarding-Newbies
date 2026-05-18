@@ -50,6 +50,17 @@ Consider the following five questions to cover the major HDFS topics:
    הדופ עושה שימוש בRack Awareness כדי לאפשר לnamenood לדעת באיזה rack כל datanoode מאוחסן.
     דבר המסייע לnamenoode להחליט באיזה racks לאחסן את הנתונים ואת העותקים שלהם.
 באמצעות אחסון הנתונים והעתקים שלהם על גבי הrocks גם כאשר מתרחש כשל בrock, יהיה עדיין ניתן לגשת לאותם הנתונים שהוא הכיל דרך ההעתקים שנשמרו בrocks האחרים.
+הHADDOP פועל לפי כללים מסוימים עבור אחסון הבלוקים והעתקים שלהם על גבי הrocks, הכללים הללו למעשה מבטיחים שלא יהיה מצב שבו יהיה אובדן למידע.
+הכללים הם:
+1- לא יותר מעותק אחד של בלוק יאוחסן תחת אותו הdatanoode.
+2- לא יותר מ2 עותקים של אותו הבלוק יאוחסנו תחת אותו הrack.
+3- העתקים של הבלוקים יהיו מאוחסנים באופן מבוזר על פני מספר racks שונים.
+
+הsnapshots:
+הsnapshots ניתנים לקריאה בלבד.
+כל סנאפשוט הוא למעשה העתק של מערכת הקבצים\ניתוב מסוים בה בנקודת זמן מסוימת.
+השימוש בסנאפשוט נעשה בין היתר גם עבור ביצוע גיבוי על נתונים.
+
 5. **High Availability :**  Outline HDFS High Availability (Active/Standby NameNode, JournalNodes). How do these features improve scalability and uptime?
 6. **Protocol & Operations:**  Describe how clients read and write data to HDFS via RPC, how they locate NameNodes and DataNodes, how DataNodes send block reports, and why these mechanisms matter for everyday operations. Cover the runtime behaviour of leases and pipeline formation.
 
