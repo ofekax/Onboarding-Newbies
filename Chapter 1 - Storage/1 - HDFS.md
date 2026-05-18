@@ -31,7 +31,16 @@ Consider the following five questions to cover the major HDFS topics:
    הDatanoodes : הנודים שבהם בסופו של דבר דבר התונים מאוחסנים. הנודים הללו מאחסנים ומחזירים בלוקים בהתאם להוראת הnamennode.
    כל datanoode מדווח לאחר כל פרק זמן מסוים לnamenood רשימv של הבלוקים שמאוכסנים אצלו כדי שהוא יהיה עקבי ומעודכן כמה שיותר.
    
-3. **Storage & Fault Tolerance:**  Explain how HDFS divides files into blocks, uses replication (default factor three), and how it detects and recovers from node failures.
+2. **Storage & Fault Tolerance:**  Explain how HDFS divides files into blocks, uses replication (default factor three), and how it detects and recovers from node failures.
+   כל קובץ בHDFS מחולק לבלוקים בגודל מסוים (באופן דיפולטי גודל כל בלוק הינו 128MB ) ולאחר מכן הבלוקים הללו מאוחסנים בדאטה נודס שונים.
+   עבור כל קובץ בHDFS כאשר הנתונים שבו מחולקים לבלוקים, הרפליקישן פאקטור יוצר באופן אוטומתי העתקים של הבלוקים שמרכיבים את הקובץ.
+   באופן דיפולטי נוצרים 3 העתקים (המשתמש יכול לשנות זאת) וכל העתק יאוחסן במכונה אחרת.
+   שכפול הבלוקים של הקבצים למעשה תורם רבות לשרידות המידע של שלהם.
+   כאשר מכונה מסוימת קורסת, יהיה עדיין ניתן לגשת לנתוני הקובץ.
+   מכיוון יהיה אפשר לגשת לבלוקים של אותו הקובץ אשר שוכפלו למכונה אחרת.
+   
+   
+   
 4. **Topology Awareness & Performance:**  What is rack awareness and why does HDFS replicate across racks? Discuss how block placement, snapshots, and checksums contribute to performance and data integrity.
 5. **High Availability :**  Outline HDFS High Availability (Active/Standby NameNode, JournalNodes). How do these features improve scalability and uptime?
 6. **Protocol & Operations:**  Describe how clients read and write data to HDFS via RPC, how they locate NameNodes and DataNodes, how DataNodes send block reports, and why these mechanisms matter for everyday operations. Cover the runtime behaviour of leases and pipeline formation.
