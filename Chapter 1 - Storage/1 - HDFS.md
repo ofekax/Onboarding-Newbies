@@ -32,10 +32,10 @@ Consider the following five questions to cover the major HDFS topics:
    כל datanoode מדווח לאחר כל פרק זמן מסוים לnamenood רשימv של הבלוקים שמאוכסנים אצלו כדי שהוא יהיה עקבי ומעודכן כמה שיותר.
    בHADDOP HA קלסטר 2 מכונות שונות או יותר מוגדרות כnamenoodes ובכל רגע רק namenoode אחר יהיה פעיל, והשאר יהיו במצב stand by ויספקו גיבוי באופן מהיר כאשר הnamenood הפעיל יקרוס.
    כאשר מתבצע שינוי מסוים בnamespace על ידי הnamenoode הפעיל, יתווסיף תיעוד על השינוי שבוצע בקובץ edit log (קובץ שבו מתועדים השינויים שבוצעו) אשר מאוסחן בספריה המאוחסנת במקור אחסון משותף לכל הnamenoodes.
-   הstand by  נודס עוקבים כל הזמן אחר הספרייה המשותפת וכאשר הם מבחינים בתיעוד לשינוי שבוצע הם מיישמים אותו בnamespace שלהם.
+   הstand by נודס עוקבים כל הזמן אחר הספרייה המשותפת וכאשר הם מבחינים בתיעוד לשינוי שבוצע הם מיישמים אותו בnamespace שלהם.
    הHDFS HA קלסטר עושה שימוש בזוקיפר עבור בחירת הnamenood הפעיל ועבור סנכרון הנתונים.
    
-3. **Storage & Fault Tolerance:**  Explain how HDFS divides files into blocks, uses replication (default factor three), and how it detects and recovers from node failures.
+2. **Storage & Fault Tolerance:**  Explain how HDFS divides files into blocks, uses replication (default factor three), and how it detects and recovers from node failures.
    כל קובץ בHDFS מחולק לבלוקים בגודל מסוים (באופן דיפולטי גודל כל בלוק הינו 128MB ) ולאחר מכן הבלוקים הללו מאוחסנים בדאטה נודס שונים.
    עבור כל קובץ בHDFS כאשר הנתונים שבו מחולקים לבלוקים, הרפליקישן פאקטור יוצר באופן אוטומתי העתקים של הבלוקים שמרכיבים את הקובץ.
    באופן דיפולטי נוצרים 3 העתקים (המשתמש יכול לשנות זאת) וכל העתק יאוחסן במכונה אחרת.
@@ -45,7 +45,11 @@ Consider the following five questions to cover the major HDFS topics:
    
    
    
-4. **Topology Awareness & Performance:**  What is rack awareness and why does HDFS replicate across racks? Discuss how block placement, snapshots, and checksums contribute to performance and data integrity.
+3. **Topology Awareness & Performance:**  What is rack awareness and why does HDFS replicate across racks? Discuss how block placement, snapshots, and checksums contribute to performance and data integrity.
+   בקלסטר של HDFS כפי שאמרתי הנתונים מחולקים לבלוקים אשר מאוחסנים על גבי מכונות שונות אשר נקראות DATANODES, הדאטה נודס הינם מקובצים לקבוצות של racks (כל ראק למעשה מכיל בתוכו קבוצה של דאטה נודס).
+   הדופ עושה שימוש בRack Awareness כדי לאפשר לnamenood לדעת באיזה rack כל datanoode מאוחסן.
+    דבר המסייע לnamenoode להחליט באיזה racks לאחסן את הנתונים ואת העותקים שלהם.
+באמצעות אחסון הנתונים והעתקים שלהם על גבי הrocks גם כאשר מתרחש כשל בrock, יהיה עדיין ניתן לגשת לאותם הנתונים שהוא הכיל דרך ההעתקים שנשמרו בrocks האחרים.
 5. **High Availability :**  Outline HDFS High Availability (Active/Standby NameNode, JournalNodes). How do these features improve scalability and uptime?
 6. **Protocol & Operations:**  Describe how clients read and write data to HDFS via RPC, how they locate NameNodes and DataNodes, how DataNodes send block reports, and why these mechanisms matter for everyday operations. Cover the runtime behaviour of leases and pipeline formation.
 
