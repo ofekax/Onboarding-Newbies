@@ -28,7 +28,7 @@ Consider the following five questions to cover the major HDFS topics:
    בלוקס- בHDFS הקבצים מחולקים לבלוקים אשר מכילים את נתוני הקבצים ומאוחסנים כיחידות אצמעיות, באופן דיפולטי גודל כל בלוק הוא 128 MB בHDFS.
    הNamenoodes : נוד שמנהל את הnamespace של מערכת הקבצים ואחראי לשמור על המבנה ההירכי של מערכת הקבצים ועל המטא דאטה של כל הקבצים\התיקיות שנמצאים במערכת הקבצים.
    הnamenoode יודע עבור כל קובץ באיזה datanoodes הבלוקים שלו מאוחסנים.
-   הDatanoodes : נודים שמאחסנים ומחזירים בלוקים בהתאם להוראת הלקוח\הnamennode.
+   הDatanoodes : הנודים שבהם בסופו של דבר דבר התונים מאוחסנים. הנודים הללו מאחסנים ומחזירים בלוקים בהתאם להוראת הnamennode.
    כל datanoode מדווח לאחר כל פרק זמן מסוים לnamenood רשימv של הבלוקים שמאוכסנים אצלו כדי שהוא יהיה עקבי ומעודכן כמה שיותר.
    
 3. **Storage & Fault Tolerance:**  Explain how HDFS divides files into blocks, uses replication (default factor three), and how it detects and recovers from node failures.
