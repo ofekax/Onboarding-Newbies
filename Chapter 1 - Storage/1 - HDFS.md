@@ -34,18 +34,20 @@ Consider the following five questions to cover the major HDFS topics:
    כאשר מתבצע שינוי מסוים בnamespace על ידי הnamenoode הפעיל, יתווסיף תיעוד על השינוי שבוצע בקובץ edit log (קובץ שבו מתועדים השינויים שבוצעו) אשר מאוסחן בספריה המאוחסנת במקור אחסון משותף לכל הnamenoodes.
    הstand by נודס עוקבים כל הזמן אחר הספרייה המשותפת וכאשר הם מבחינים בתיעוד לשינוי שבוצע הם מיישמים אותו בnamespace שלהם.
    הHDFS HA קלסטר עושה שימוש בזוקיפר עבור בחירת הnamenood הפעיל ועבור סנכרון הנתונים.
+
    
 2. **Storage & Fault Tolerance:**  Explain how HDFS divides files into blocks, uses replication (default factor three), and how it detects and recovers from node failures.
    כל קובץ בHDFS מחולק לבלוקים בגודל מסוים (באופן דיפולטי גודל כל בלוק הינו 128MB ) ולאחר מכן הבלוקים הללו מאוחסנים בדאטה נודס שונים.
    עבור כל קובץ בHDFS כאשר הנתונים שבו מחולקים לבלוקים, הרפליקישן פאקטור יוצר באופן אוטומתי העתקים של הבלוקים שמרכיבים את הקובץ.
-   באופן דיפולטי נוצרים 3 העתקים (המשתמש יכול לשנות זאת) וכל העתק יאוחסן במכונה אחרת.
+   באופן דיפולטי נוצרים 3 העתקים (המשתמש יכול לשנות זאת) וכל העתק יאוחסן בדאטה נוד אחר.
    שכפול הבלוקים של הקבצים למעשה תורם רבות לשרידות המידע של שלהם.
    כאשר מכונה מסוימת קורסת, יהיה עדיין ניתן לגשת לנתוני הקובץ.
    מכיוון יהיה אפשר לגשת לבלוקים של אותו הקובץ אשר שוכפלו למכונה אחרת.
+   בנוסף הוספת הרפליקות מסייעת עבור שיפועי ביצועי הקריאה בקלסטר (מכיוון שיש יותר datanoodes, ולכן ביזור בקשות הקריאה גדל).
    
    
    
-3. **Topology Awareness & Performance:**  What is rack awareness and why does HDFS replicate across racks? Discuss how block placement, snapshots, and checksums contribute to performance and data integrity.
+4. **Topology Awareness & Performance:**  What is rack awareness and why does HDFS replicate across racks? Discuss how block placement, snapshots, and checksums contribute to performance and data integrity.
    בקלסטר של HDFS כפי שאמרתי הנתונים מחולקים לבלוקים אשר מאוחסנים על גבי מכונות שונות אשר נקראות DATANODES, הדאטה נודס הינם מקובצים לקבוצות של racks (כל ראק למעשה מכיל בתוכו קבוצה של דאטה נודס).
    הדופ עושה שימוש בRack Awareness כדי לאפשר לnamenood לדעת באיזה rack כל datanoode מאוחסן.
     דבר המסייע לnamenoode להחליט באיזה racks לאחסן את הנתונים ואת העותקים שלהם.
@@ -54,7 +56,6 @@ Consider the following five questions to cover the major HDFS topics:
 הכללים הם:
 1- לא יותר מעותק אחד של בלוק יאוחסן תחת אותו הdatanoode.
 2- לא יותר מ2 עותקים של אותו הבלוק יאוחסנו תחת אותו הrack.
-3- העתקים של הבלוקים יהיו מאוחסנים באופן מבוזר על פני מספר racks שונים.
 
 הsnapshots:
 הsnapshots ניתנים לקריאה בלבד.
@@ -68,8 +69,17 @@ Consider the following five questions to cover the major HDFS topics:
 אם האימות לא הוצלח הלקוח יכול לאחזר את הבלוק הפגום מdatanoode אחר אשר מהווה העתק לאותו הבלוק הפגום.
 
 4. **High Availability :**  Outline HDFS High Availability (Active/Standby NameNode, JournalNodes). How do these features improve scalability and uptime?
+    בHADDOP HA קלסטר 2 מכונות שונות או יותר מוגדרות כnamenoodes ובכל רגע רק namenoode אחר יהיה פעיל, והשאר יהיו במצב stand by ויספקו גיבוי באופן מהיר כאשר הnamenood הפעיל יקרוס.
+   כאשר מתבצע שינוי מסוים בnamespace על ידי הnamenoode הפעיל, יתווסיף תיעוד על השינוי שבוצע בקובץ edit log (קובץ שבו מתועדים השינויים שבוצעו) אשר מאוסחן בספריה המאוחסנת במקור אחסון משותף לכל הnamenoodes.
+   הstand by נודס עוקבים כל הזמן אחר הספרייה המשותפת וכאשר הם מבחינים בתיעוד לשינוי שבוצע הם מיישמים אותו בnamespace שלהם כדי להיות מסונכרים עם הnamespace של הacitive namenood.
+   אמצעי האחסון המשותף לnamenoodes יכול להיות NFS או QJM , מומלץ יותר לעשות שימוש בQJM מכיוון שהוא מאפשר לשתף edit logs בין כל הnamenoodes (הstand by והactive).
+   כדי שהstand by namenoods ישארו מסונכרנים עם הנוד הפעיל, הנודים "המשניים" מסתכרנים באמצעות הJournalNodes.
+   כאשר הactuve namenood מבצע שינוי מסויים בnamespace שלו, הactive namennod רושם תיעוד לשינוי שנעשה באמצעות קובץ הedit log בJournalNodes.
    
-5. **Protocol & Operations:**  Describe how clients read and write data to HDFS via RPC, how they locate NameNodes and DataNodes, how DataNodes send block reports, and why these mechanisms matter for everyday operations. Cover the runtime behaviour of leases and pipeline formation.
+   
+
+
+6. **Protocol & Operations:**  Describe how clients read and write data to HDFS via RPC, how they locate NameNodes and DataNodes, how DataNodes send block reports, and why these mechanisms matter for everyday operations. Cover the runtime behaviour of leases and pipeline formation.
 
 ### 🔄 Alternatives
 Assignment: You are required to research and write a comparative analysis between HDFS and an industry alternative.
