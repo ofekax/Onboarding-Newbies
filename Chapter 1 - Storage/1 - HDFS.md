@@ -64,11 +64,12 @@ Consider the following five questions to cover the major HDFS topics:
 הchecksum:
 יתכן מצב שבו בלוק נתונים מגיע פגום עקב תקלות רשת, שגיאות IO וכו...
 כדי לטפל בכך, כאשר לקוח יוצר קובץ בHDFS, הHDFS מפעיל אלגוריתם checksum עבור כל אחד מהבלוקים שמרכיבים את הקובץ ואת התוצאה המתקבלת עבור כל בלוק הוא שומר בתוך קובץ מוסתר בnamespace של אותה מערכת הקבצים.
-כשאר לקוח רוצה לגשת לקובץ קיים במHDFS, עבור כל בלוק נתונים בקובץ הרצוי מופעל האלגוריתם checksum ומתבצע אימות בין התוצאה המתקבלת לבין התוצאה הצפויה כדי להבטיח שהבלוק אינו פגום.
+כשאר לקוח רוצה לגשת לקובץ קיים במHDFS, עבור כל datanoode שבו מאוחסן בלוק נתונים שחלק מה-קובץ הרצוי מופעל האלגוריתם checksum ומתבצע אימות בין התוצאה המתקבלת לבין התוצאה הצפויה כדי להבטיח שהבלוק אינו פגום.
 אם האימות לא הוצלח הלקוח יכול לאחזר את הבלוק הפגום מdatanoode אחר אשר מהווה העתק לאותו הבלוק הפגום.
 
-5. **High Availability :**  Outline HDFS High Availability (Active/Standby NameNode, JournalNodes). How do these features improve scalability and uptime?
-6. **Protocol & Operations:**  Describe how clients read and write data to HDFS via RPC, how they locate NameNodes and DataNodes, how DataNodes send block reports, and why these mechanisms matter for everyday operations. Cover the runtime behaviour of leases and pipeline formation.
+4. **High Availability :**  Outline HDFS High Availability (Active/Standby NameNode, JournalNodes). How do these features improve scalability and uptime?
+   
+5. **Protocol & Operations:**  Describe how clients read and write data to HDFS via RPC, how they locate NameNodes and DataNodes, how DataNodes send block reports, and why these mechanisms matter for everyday operations. Cover the runtime behaviour of leases and pipeline formation.
 
 ### 🔄 Alternatives
 Assignment: You are required to research and write a comparative analysis between HDFS and an industry alternative.
