@@ -26,7 +26,7 @@ Consider the following five questions to cover the major HDFS topics:
 
 1. **Architecture & Roles:**  Describe HDFS’s overall architecture, including NameNode(s), DataNodes, blocks, and how the namespace and metadata are managed. Don’t forget the role of ZooKeeper in coordinating HA and keeping track of leases.
    בלוקס- בHDFS הקבצים מחולקים לבלוקים אשר מכילים את נתוני הקבצים ומאוחסנים כיחידות אצמעיות, באופן דיפולטי גודל כל בלוק הוא 128 MB בHDFS.
-   הNamenoodes : נוד שמנהל את הnamespace של מערכת הקבצים ואחראי לשמור על המבנה ההירכי של מערכת הקבצים ועל המטא דאטה של כל הקבצים\התיקיות שנמצאים במערכת הקבצים.
+   הNamenoodes : נוד שמנהל את הnamespace של מערכת הקבצים ואחראי לשמור על המבנה ההירכי של מערכת הקבצים ועל המטא דאטה של כל הקבצים\התיקיות שנמצאים במערכת הקבצים (אשר מאוחסן תחת הFS IMAGE).
    הnamenoode יודע עבור כל קובץ באיזה datanoodes הבלוקים שלו מאוחסנים.
    הDatanoodes : הנודים שבהם בסופו של דבר דבר התונים מאוחסנים. הנודים הללו מאחסנים ומחזירים בלוקים בהתאם להוראת הnamennode.
    כל datanoode מדווח לאחר כל פרק זמן מסוים לnamenood רשימv של הבלוקים שמאוכסנים אצלו כדי שהוא יהיה עקבי ומעודכן כמה שיותר.
@@ -36,7 +36,7 @@ Consider the following five questions to cover the major HDFS topics:
    הHDFS HA קלסטר עושה שימוש בזוקיפר עבור בחירת הnamenood הפעיל ועבור סנכרון הנתונים.
 
    
-2. **Storage & Fault Tolerance:**  Explain how HDFS divides files into blocks, uses replication (default factor three), and how it detects and recovers from node failures.
+3. **Storage & Fault Tolerance:**  Explain how HDFS divides files into blocks, uses replication (default factor three), and how it detects and recovers from node failures.
    כל קובץ בHDFS מחולק לבלוקים בגודל מסוים (באופן דיפולטי גודל כל בלוק הינו 128MB ) ולאחר מכן הבלוקים הללו מאוחסנים בדאטה נודס שונים.
    עבור כל קובץ בHDFS כאשר הנתונים שבו מחולקים לבלוקים, הרפליקישן פאקטור יוצר באופן אוטומתי העתקים של הבלוקים שמרכיבים את הקובץ.
    באופן דיפולטי נוצרים 3 העתקים (המשתמש יכול לשנות זאת) וכל העתק יאוחסן בדאטה נוד אחר.
@@ -76,6 +76,7 @@ Consider the following five questions to cover the major HDFS topics:
    אמצעי האחסון המשותף לnamenoodes יכול להיות NFS או QJM , מומלץ יותר לעשות שימוש בQJM מכיוון שהוא מאפשר לשתף edit logs בין כל הnamenoodes (הstand by והactive).
    כדי שהstand by namenoods ישארו מסונכרנים עם הנוד הפעיל, הנודים "המשניים" מסתכרנים באמצעות הJournalNodes.
    כאשר הactuve namenood מבצע שינוי מסויים בnamespace שלו, הactive namennod רושם תיעוד לשינוי שנעשה באמצעות קובץ הedit log בJournalNodes.
+  לאחר מכן הstand by namenoode קורא מהבJournalNodes את השינויים שבוצעו ומיישם אותם בnamespace שלו.
    
    
 
