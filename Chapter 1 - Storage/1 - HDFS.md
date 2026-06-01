@@ -82,6 +82,13 @@ Consider the following five questions to cover the major HDFS topics:
    מה זה הפקודה: hdfs dfs-appendtofile?
    פקודה שמוסיפה תוכן של קובץ מסוים לקובץ אחר קיים.
 
+   מי שומר את ההרשאות לקבצים בhdfs ומה היעוד של audit log?
+   הACL, הרשימה הזו מכילה רשימה של הרשאות גישה לקבצים ותיקיות בFS.
+   הACL מאפשר להגדיר למשתמש ספציפי או קבוצה מסוימת של משתמשים הרשאות גישה לתיקיות או קבצים במערכת הקבצים.
+יעוד הaudit logs הינו לאחסן תיעוד של בקשות הגיישה שהתקבלו מהמשתמשים לקבצים במערכת הקבצים.
+   
+   
+
 
 6. **Protocol & Operations:**  Describe how clients read and write data to HDFS via RPC, how they locate NameNodes and DataNodes, how DataNodes send block reports, and why these mechanisms matter for everyday operations. Cover the runtime behaviour of leases and pipeline formation.
 
