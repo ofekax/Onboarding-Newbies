@@ -78,7 +78,9 @@ Consider the following five questions to cover the major HDFS topics:
    כאשר הactuve namenood מבצע שינוי מסויים בnamespace שלו, הactive namennod רושם תיעוד לשינוי שנעשה באמצעות קובץ הedit log בJournalNodes.
   לאחר מכן הstand by namenoode קורא מהבJournalNodes את השינויים שבוצעו ומיישם אותם בnamespace שלו.
    
-   
+
+   מה זה הפקודה: hdfs dfs-appendtofile?
+   פקודה שמוסיפה תוכן של קובץ מסוים לקובץ אחר קיים.
 
 
 6. **Protocol & Operations:**  Describe how clients read and write data to HDFS via RPC, how they locate NameNodes and DataNodes, how DataNodes send block reports, and why these mechanisms matter for everyday operations. Cover the runtime behaviour of leases and pipeline formation.
